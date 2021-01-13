@@ -1,0 +1,23 @@
+{
+  "name": "streamlinehq",
+  "version": "0.0.1",
+  "description": "Universal NPM package for Streamline visual assets.",
+  "main": "index.js",
+  "scripts": {
+    "start": "yarn node index.js"
+  },
+  "engines": {
+    "node": "14.15.0",
+    "npm": "6.14.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webalys-hq/streamlinehq-npm.git"
+  },
+  "author": "Webalys",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/webalys-hq/streamlinehq-npm/issues"
+  },
+  "homepage": "https://github.com/webalys-hq/streamlinehq-npm#readme"
+}
