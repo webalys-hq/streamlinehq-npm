@@ -10,6 +10,7 @@
     "node": "14.15.0",
     "npm": "6.14.8"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/webalys-hq/streamlinehq-npm.git"
