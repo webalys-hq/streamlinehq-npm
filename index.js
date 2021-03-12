@@ -1,41 +1,47 @@
 import { fileURLToPath } from "url";
 import { dirname } from "path";
-import { readFile } from "fs/promises";
-import https from "https";
+import { readFile, writeFile, mkdir } from "fs/promises";
+// import https from "https";
+import http from "http";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-async function fetchFamilies(secret) {
-  return new Promise((resolve, reject) =>
-    https
-      .get(
-        // TODO: change for the real endpoint when it is ready
-        "https://api.staging.streamlineicons.com/v2/icons/streamline-regular/interface-essential/home/house",
-        {
-          headers: {
-            Authorization: ` Bearer ${secret}`,
+async function fetchFamilies(secret, families) {
+  const fetchFamilyPromises = families.map((family) =>
+    new Promise((resolve, reject) => {
+      // https
+      http
+        .get(
+          // TODO: change for the real endpoint when it is ready
+          // `https://api.staging.streamlineicons.com/v3/icons/${family}`,
+          `http://localhost:8080/v3/icons/${family}`,
+          {
+            headers: {
+              Authorization: `Bearer ${secret}`,
+            },
           },
-        },
-        (resp) => {
-          let data = "";
+          (resp) => {
+            let data = ''
 
-          // A chunk of data has been received.
-          resp.on("data", (chunk) => {
-            data += chunk;
-          });
+            // A chunk of data has been received.
+            resp.on('data', (chunk) => {
+              data += chunk
+            })
 
-          // The whole response has been received. Print out the result.
-          resp.on("end", () => {
-            resolve(data);
-          });
-        }
-      )
-      .on("error", (err) => {
-        console.log("Error: " + err.message);
-        reject(err);
-      })
-  );
+            // The whole response has been received. Print out the result.
+            resp.on('end', () => {
+              resolve(JSON.parse(data))
+            })
+          }
+        )
+        .on('error', (err) => {
+          console.log('Error: ' + err.message)
+          reject(err)
+        })
+    }))
+
+  return Promise.all(fetchFamilyPromises)
 }
 
 async function installStreamlineAssets() {
@@ -60,9 +66,15 @@ async function installStreamlineAssets() {
       );
     }
 
-    const families = await fetchFamilies(streamlineConfiguration.secret);
-    console.log(families);
-    // TODO: create files here
+    const fetchedFamiliesResponses = await fetchFamilies(streamlineConfiguration.secret, streamlineConfiguration.families);
+
+    fetchedFamiliesResponses.forEach((familyResponse) => {
+      familyResponse.data.forEach(async (icon) => {
+        const folderPath = `${__dirname}/images/${icon.family.slug}`
+        await mkdir(folderPath, {recursive: true})
+        await writeFile(`${folderPath}/${icon.slug}.svg`, icon.svg)
+      })
+    })
 
     console.debug("Finished installation");
   } catch (e) {

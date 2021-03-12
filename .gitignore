@@ -48,3 +48,7 @@ tmp
 
 .yalc
 yalc.lock
+
+
+# Generated files
+images
