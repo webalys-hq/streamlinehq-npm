@@ -13,9 +13,9 @@ async function fetchFamilies(secret, families) {
       // https
       http
         .get(
-          // TODO: change for the real endpoint when it is ready
+          // TODO: change for the real endpoint when package is ready
           // `https://api.staging.streamlineicons.com/v3/icons/${family}`,
-          `http://localhost:8080/v3/icons/${family}`,
+          `http://localhost:8080/v3/icons/${family}?withSVG=true`,
           {
             headers: {
               Authorization: `Bearer ${secret}`,
@@ -31,7 +31,7 @@ async function fetchFamilies(secret, families) {
 
             // The whole response has been received. Print out the result.
             resp.on('end', () => {
-              resolve(JSON.parse(data))
+              resolve({ ...JSON.parse(data), familyName: family, statusCode: resp.statusCode })
             })
           }
         )
@@ -69,11 +69,22 @@ async function installStreamlineAssets() {
     const fetchedFamiliesResponses = await fetchFamilies(streamlineConfiguration.secret, streamlineConfiguration.families);
 
     fetchedFamiliesResponses.forEach((familyResponse) => {
-      familyResponse.data.forEach(async (icon) => {
-        const folderPath = `${__dirname}/images/${icon.family.slug}`
-        await mkdir(folderPath, {recursive: true})
-        await writeFile(`${folderPath}/${icon.slug}.svg`, icon.svg)
-      })
+      if (familyResponse.success) {
+        familyResponse.data.forEach(async (icon) => {
+          if (!icon.svg) {
+            throw new Error(`No SVG data is present, please report an issue to Streamline team about icon ${icon.slug} of family ${icon.family.slug}`)
+          }
+          const folderPath = `${__dirname}/images/${icon.family.slug}`
+          await mkdir(folderPath, {recursive: true})
+          await writeFile(`${folderPath}/${icon.slug}.svg`, icon.svg)
+        })
+      } else {
+        let errorMessage = `Got error "${familyResponse.error}" for family ${familyResponse.familyName}.`
+        if (familyResponse.statusCode === 401) {
+          errorMessage += ` Error code is 401 which means it's most likely related to the auth token which was provided. Please double check its value by following the instructions in the project's README file.`
+        }
+        throw new Error(errorMessage)
+      }
     })
 
     console.debug("Finished installation");
