@@ -27,7 +27,8 @@
     "build": "NODE_ENV=production rollup -c",
     "dev": "NODE_ENV=development rollup -c -w",
     "start": "yarn node build/index.js",
-    "lint": "eslint 'src/index.ts' --quiet --fix"
+    "lint": "eslint 'src/index.ts' --quiet --fix",
+    "postinstall": "yarn start"
   },
   "engines": {
     "node": "14.15.0",

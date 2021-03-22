@@ -3,7 +3,6 @@ import { dirname } from 'path'
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import querystring from 'querystring'
 import https from 'https'
-// import http from 'http'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -23,12 +22,10 @@ async function getSVGs(
 ): Promise<StreamlineResponse> {
   return new Promise((resolve, reject) => {
     https
-      // http
       .get(
         `https://api.staging.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
           { families },
         )}`,
-        // `http://localhost:8080/v3/npm/assets/${secret}?${querystring.encode({families})}`,
         {
           headers: { 'Content-Type': 'application/json' },
         },
@@ -40,7 +37,6 @@ async function getSVGs(
           })
 
           resp.on('end', () => {
-            // console.debug(data)
             try {
               resolve({
                 ...JSON.parse(data),
@@ -61,14 +57,13 @@ async function getSVGs(
 
 export async function installStreamlineAssets() {
   try {
-    // const url = new URL(__dirname + '/../streamlinehq.json', import.meta.url)
-    const url = `${__dirname}/../../streamlinehq.json`
+    const url = `${__dirname}/../../../streamlinehq.json`
     const file = await readFileSync(url).toString()
     const streamlineConfiguration = JSON.parse(file)
     console.debug(
       `Installing Streamline assets for ${streamlineConfiguration.families.join(
         ', ',
-      )} families...`,
+      )} families based on configuration file ${url}...`,
     )
     if (
       !streamlineConfiguration.families ||
