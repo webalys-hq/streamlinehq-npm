@@ -19,7 +19,7 @@ The config file must be kept away from code repository as it contains your secre
 
 It will execute the `postinstall` script which will fetch the graphical assets. The requested images in a form of SVG files will be put in the package's `images` folder. After this you will be able to import those images as usual in your project, eg:
 ```jsx
-import CheckCircle1 from 'streamlinehq/images/streamline-bold/check-circle-1.svg'
+import CheckCircle1 from '@streamlinehq/streamlinehq/images/streamline-bold/check-circle-1.svg'
 ```
 
 ## Troubleshooting
