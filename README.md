@@ -26,3 +26,7 @@ import CheckCircle1 from 'streamlinehq/images/streamline-bold/check-circle-1.svg
 In 95% of the cases you need to ensure that you have a proper `streamlinehq.json` file in your project and reinstall node packages.
 
 If that didn't help or if you have any questions please open an issue.
+
+## Notes
+
+- It has 0 dependencies.

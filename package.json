@@ -1,8 +1,8 @@
 {
-  "name": "streamlinehq",
-  "version": "0.0.1",
+  "name": "@streamlinehq/streamlinehq",
+  "version": "1.0.1",
   "private": false,
-  "description": "Universal NPM package for Streamline visual assets.",
+  "description": "Universal NPM package for Streamline images.",
   "keywords": [
     "streamline",
     "streamline-icons",
