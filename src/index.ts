@@ -57,7 +57,7 @@ async function getSVGs(
 
 export async function installStreamlineAssets() {
   try {
-    const url = `${__dirname}/../../../streamlinehq.json`
+    const url = `${__dirname}/../../../../streamlinehq.json`
     const file = await readFileSync(url).toString()
     const streamlineConfiguration = JSON.parse(file)
     console.debug(

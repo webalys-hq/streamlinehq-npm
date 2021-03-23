@@ -15,7 +15,7 @@ The config file must be kept away from code repository as it contains your secre
 5. Edit its contents with:   
     - `families`: an array of strings with names of Streamline icons or illustrations families you own and which you want to include in your project. You can take the name from its url in Streamline. Eg a name of Brooklyn Illustrations from page https://app.streamlinehq.com/illustrations-brooklyn is `illustrations-brooklyn`.
     - `secret`: your private npm token which is taken from [Streamline developer page](https://app.streamlinehq.com/profile/developer)
-6. Finally, install the package in your project with npm or yarn `yarn add streamlinehq`.
+6. Finally, install the package in your project with npm or yarn `yarn add @streamlinehq/streamlinehq`.
 
 It will execute the `postinstall` script which will fetch the graphical assets. The requested images in a form of SVG files will be put in the package's `images` folder. After this you will be able to import those images as usual in your project, eg:
 ```jsx
