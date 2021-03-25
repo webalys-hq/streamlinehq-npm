@@ -23,7 +23,7 @@ async function getSVGs(
   return new Promise((resolve, reject) => {
     https
       .get(
-        `https://api.staging.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
+        `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
           { families },
         )}`,
         {

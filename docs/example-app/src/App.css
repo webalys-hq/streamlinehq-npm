@@ -1,0 +1,30 @@
+main {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+img, svg {
+  display: block;
+  margin: 25px 0;
+}
+
+figure {
+  padding: 5px 0 25px;
+  border-bottom: 1px solid #ccc;
+}
+
+figure code {
+  display: block;
+  line-height: 30px;
+  background: khaki;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+p {
+  line-height: 25px;
+}
+
+.custom-svg path {
+  fill: green;
+}
