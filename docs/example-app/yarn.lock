@@ -1479,10 +1479,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@streamlinehq/streamlinehq@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@streamlinehq/streamlinehq/-/streamlinehq-1.0.2.tgz#dbb81e0b85a0b51e2e36bf44075ba4e18622158e"
-  integrity sha512-eQks1F6PglQoQCggjGoQ4nW38tJN/cY4dVqlB8ejCfnpJVw+JqJWu97wlP+uo74VD53KzqSXhRrxb3819GproA==
+"@streamlinehq/streamlinehq@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@streamlinehq/streamlinehq/-/streamlinehq-1.0.4.tgz#a764733c84679cf18f7f45d78fc09c7843390256"
+  integrity sha512-5izOYuG80RTfu8B379aPl2XhSt1s3DOcvU6NUZIZ5WyPH8utfmFVvksftEre9hMkJa6Ukuf+7GOxbFFnEnEiog==
 
 "@surma/rollup-plugin-off-main-thread@^1.1.1":
   version "1.4.2"

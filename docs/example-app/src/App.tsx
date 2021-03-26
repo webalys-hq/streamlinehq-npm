@@ -5,6 +5,8 @@ import { ReactComponent as House3 } from '@streamlinehq/streamlinehq/images/stre
 import zoomIn from '@streamlinehq/streamlinehq/images/streamline-bold/zoom-in.svg'
 import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamlinehq/images/streamline-mini-bold/interface-share-hand-lock.svg'
 import interfaceFavoriteLike1 from '@streamlinehq/streamlinehq/images/streamline-mini-bold/interface-favorite-like-1.svg'
+import avatar2 from '@streamlinehq/streamlinehq/images/illustrations-line/avatar-2.svg'
+import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/images/illustrations-line/astronaut-robot-2.svg'
 
 import './App.css'
 
@@ -12,7 +14,7 @@ const App = () => (
   <main>
     <h1>streamlinehq example app</h1>
 
-    <p><code>streamlinehq.json </code> in this app (not added to git but you can check <code>streamlinehq_example.json</code> instead) has <code>["streamline-regular", "streamline-bold", "streamline-mini-bold"]</code> inside its <code>families</code> key. This means that this app has got access to icons from these 3 families.</p>
+    <p><code>streamlinehq.json </code> in this app (not added to git but you can check <code>streamlinehq_example.json</code> instead) has <code>"streamline-regular", "streamline-bold", "streamline-mini-bold", "illustrations-line"</code> inside its <code>families</code> key. This means that this app has got access to images from these 4 Streamline families.</p>
     <p>SVG images can be added directly as React components in this example app because <code>create-react-app</code> <a href="https://create-react-app.dev/docs/adding-images-fonts-and-files/#adding-svgs">supports it</a>. Your app might support importing svg files in a different way.</p>
     <p>Code for each image is taken from <a href="https://app.streamlinehq.com/">Streamline app</a>. Click on an icon there and then click on NPM Package button in the sidebar to see how to import it.</p>
 
@@ -33,8 +35,8 @@ const App = () => (
       <h2><a href="https://app.streamlinehq.com/icons/streamline-bold">Streamline-bold</a></h2>
       <figure>
         <code>{`import { ReactComponent as House3 } from '@streamlinehq/streamlinehq/images/streamline-bold/house-3.svg'`}</code>
-        <code>{`<House3 className="custom-svg"/>`}</code>
-        <House3 className="custom-svg"/>
+        <code>{`<House3 className="green"/>`}</code>
+        <House3 className="green"/>
       </figure>
       <figure>
         <code>{`import zoomIn from '@streamlinehq/streamlinehq/images/streamline-bold/zoom-in.svg'`}</code>
@@ -46,13 +48,26 @@ const App = () => (
       <h2><a href="https://app.streamlinehq.com/icons/streamline-mini-bold">Streamline-mini-bold</a></h2>
       <figure>
         <code>{`import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamlinehq/images/streamline-mini-bold/interface-share-hand-lock.svg'`}</code>
-        <code>{`<InterfaceShareHandLock width={100} height={100} className="custom-svg"/>`}</code>
-        <InterfaceShareHandLock width={100} height={100} className="custom-svg"/>
+        <code>{`<InterfaceShareHandLock width={100} height={100} className="green"/>`}</code>
+        <InterfaceShareHandLock width={100} height={100} className="green"/>
       </figure>
       <figure>
         <code>{`import interfaceFavoriteLike1 from '@streamlinehq/streamlinehq/images/streamline-mini-bold/interface-favorite-like-1.svg'`}</code>
         <code>{`<img src={interfaceFavoriteLike1} alt="Like" />`}</code>
         <img src={interfaceFavoriteLike1} alt="Like" />
+      </figure>
+    </section>
+    <section>
+      <h2><a href="https://app.streamlinehq.com/illustrations/illustrations-line">Streamline UX – Line</a></h2>
+      <figure>
+        <code>{`import avatar2 from '@streamlinehq/streamlinehq/images/illustrations-line/avatar-2.svg'`}</code>
+        <code>{`<img src={avatar2} alt="Avatar" />`}</code>
+        <img src={avatar2} alt="Avatar" />
+      </figure>
+      <figure>
+        <code>{`import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/images/illustrations-line/astronaut-robot-2.svg'`}</code>
+        <code>{`<AstronautRobot2 width={250} height={250} className="red"/>`}</code>
+        <AstronautRobot2 width={250} height={250} className="red"/>
       </figure>
     </section>
   </main>

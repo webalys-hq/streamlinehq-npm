@@ -1,6 +1,7 @@
 main {
   max-width: 960px;
   margin: 0 auto;
+  background: #fff;
 }
 
 img, svg {
@@ -11,6 +12,10 @@ img, svg {
 figure {
   padding: 5px 0 25px;
   border-bottom: 1px solid #ccc;
+}
+
+figure:last-child {
+  border-bottom: none;
 }
 
 figure code {
@@ -25,6 +30,10 @@ p {
   line-height: 25px;
 }
 
-.custom-svg path {
+.green path {
   fill: green;
+}
+
+.red path {
+  stroke: red;
 }
