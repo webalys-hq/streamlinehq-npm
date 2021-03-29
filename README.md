@@ -1,7 +1,7 @@
 # NPM package for Streamline icons and illustrations
-This is a small library which downloads Streamline assets you have access to into your local folder so that they can be used in your Javascript project.
+This is a small library which downloads Streamline assets you have access to into your local folder so that they can be used in your Javascript project. This is the only package you need to use Streamline assets, so if you had any wrapper or private packages please uninstall them.
 
-It uses a local config file which contains your unique `secret` - an npm token - which should be taken from your [Streamline npm package page](https://app.streamlinehq.com/profile/developer).
+This package uses a local config file which contains your unique `secret` - an npm token - which should be taken from your [Streamline npm package page](https://app.streamlinehq.com/profile/developer).
 
 The config file must be kept away from code repository as it contains your secret token. Please keep it safe.
 
@@ -33,7 +33,9 @@ Streamline images are just svg files. As a rule of thumb you should either rende
 
 In 80% of the cases you need to ensure that you have a proper `streamlinehq.json` file in your project and reinstall node packages by removing them completely and then installing them again.
 
-Ensure that you have an active subscription to the Streamline family you want to download images from.
+Ensure that you have an active subscription to the Streamline family you want to download images from. Eg an error "You can not download XXX family in SVG" means that you don't have an active license for a XXX family. Please contact the Streamline team on support@webalys.com if you have purchased the valid license and it still doesn't let you download the family.
+
+[Before installing this package you need to have any previous Streamline configuration removed](https://github.com/webalys-hq/streamlinehq-npm/issues/5). If you had private Streamline packages installed you have most likely configured your npm to pass an npm token to Cloudsmith. This configuration isn't needed anymore and it can prevent this package from being installed. Remove (or temporarily rename) your `.npmrc` file in your project and remove any streamline configuration lines you might have added to yarn/npm config by running yarn config delete <key> https://classic.yarnpkg.com/en/docs/cli/config/#toc-yarn-config-delete.
 
 Make sure that you're using the package's latest version.
 
