@@ -1,6 +1,8 @@
 # NPM package for Streamline icons and illustrations
 This is a small library which downloads Streamline assets you have access to into your local folder so that they can be used in your Javascript project. This is the only package you need to use Streamline assets, so if you had any wrapper or private packages please uninstall them.
 
+It works with any framework or library. You just need NPM and a build system like Webpack which will allow using .svg files.
+
 This package uses a local config file which contains your unique `secret` - an npm token - which should be taken from your [Streamline npm package page](https://app.streamlinehq.com/profile/developer).
 
 The config file must be kept away from code repository as it contains your secret token. Please keep it safe.
