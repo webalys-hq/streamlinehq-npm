@@ -95,7 +95,7 @@ export async function installStreamlineAssets() {
             const svg = family[iconSlugWithPartialHash]
 
             if (svg) {
-              const folderPath = `${__dirname}/../images/${familySlug}`
+              const folderPath = `${__dirname}/../img/${familySlug}`
               await mkdirSync(folderPath, { recursive: true })
               return writeFileSync(
                 `${folderPath}/${iconSlugWithPartialHash}.svg`,
