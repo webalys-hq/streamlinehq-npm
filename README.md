@@ -20,12 +20,12 @@ Warning, wrapper packages for React, Angular and Vue are deprecated and will be 
 5. Edit its contents with:   
     - `families`: an array of strings with names of Streamline icons or illustrations families you own and which you want to include in your project. You can take the name from its url in Streamline. Eg a name of Brooklyn Illustrations from page https://app.streamlinehq.com/illustrations-brooklyn is `illustrations-brooklyn`.
     - `secret`: your private npm token which is taken from [Streamline developer page](https://app.streamlinehq.com/profile/developer)
-6. Finally, install the package in your project with npm or yarn `yarn add @streamlinehq/streamlinehq`.
+6. Finally, install the package in your project with npm or npm `npm install @streamlinehq/streamlinehq`.
 
 It will execute the `postinstall` script which will fetch the graphical assets. The requested images in a form of SVG files will be put in the package's `images` folder. After this you will be able to import those images as usual in your project, eg:
 ```jsx
 // This is just an svg file. You can then use it in your <img> tag.
-import checkCircle1 from '@streamlinehq/streamlinehq/images/streamline-bold/check-circle-1.svg'
+import checkCircle1 from '@streamlinehq/streamlinehq/img/streamline-bold/check-circle-1.svg'
 ```
 
 ## How to change style, size, etc
@@ -37,7 +37,7 @@ In 80% of the cases you need to ensure that you have a proper `streamlinehq.json
 
 Ensure that you have an active subscription to the Streamline family you want to download images from. Eg an error "You can not download XXX family in SVG" means that you don't have an active license for a XXX family. Please contact the Streamline team on support@webalys.com if you have purchased the valid license and it still doesn't let you download the family.
 
-[Before installing this package you need to have any previous Streamline configuration removed](https://github.com/webalys-hq/streamlinehq-npm/issues/5). If you had private Streamline packages installed you have most likely configured your npm to pass an npm token to Cloudsmith. This configuration isn't needed anymore and it can prevent this package from being installed. Remove (or temporarily rename) your `.npmrc` file in your project and remove any streamline configuration lines you might have added to yarn/npm config by running `yarn config delete <key>` https://classic.yarnpkg.com/en/docs/cli/config/#toc-yarn-config-delete.
+[Before installing this package you need to have any previous Streamline configuration removed](https://github.com/webalys-hq/streamlinehq-npm/issues/5). If you had private Streamline packages installed you have most likely configured your npm/yarn to pass an npm token to Cloudsmith. This configuration isn't needed anymore and it can prevent this package from being installed. Remove (or temporarily rename) your `.npmrc` file in your project and remove any streamline configuration lines you might have added to yarn/npm config.
 
 Make sure that you're using the package's latest version.
 
@@ -57,13 +57,13 @@ Please check the [issues list](https://github.com/webalys-hq/streamlinehq-npm/is
 Pull requests and any suggestions are welcome!
 
 1. Fork a project, clone it (as of now it will not fetch the images as there is no `streamlinehq.json` file, feel free to ignore the error). Work on new features or fixes in a separate branch.
-2. Run `yarn dev` to compile a project on any code change.
+2. Run `npm run dev` to compile a project on any code change.
 3. Use an example app in `docs/example-app` folder to experiment with this package. Alter it so it uses a local version of the `@stremlinehq/streamlinehq` package. Read its README for more instructions.
 4. Once done, open a pull request against `master` and wait for a review.
 
 ## How to publish on npm
 Once changes are made, do the following:
 1. Increment a version in `package.json`
-2. Run `yarn build` to create a new build
+2. Run `npm run build` to create a new build
 3. Run `npm publish --access public`
 4. Change the example app code in the next pull request to use the latest version of this package.

@@ -26,14 +26,13 @@
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "dev": "NODE_ENV=development rollup -c -w",
-    "start": "yarn node build/index.js",
+    "start": "node build/index.js",
     "lint": "eslint 'src/index.ts' --quiet --fix",
-    "postinstall": "yarn start"
+    "postinstall": "npm start"
   },
   "browserslist": [
     "defaults"
   ],
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
