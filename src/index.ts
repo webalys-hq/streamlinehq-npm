@@ -2,7 +2,8 @@ import { fileURLToPath } from 'url'
 import { dirname } from 'path'
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import querystring from 'querystring'
-import https from 'https'
+// import https from 'https'
+import http from 'http'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -21,11 +22,13 @@ async function getSVGs(
   families: string[],
 ): Promise<StreamlineResponse> {
   return new Promise((resolve, reject) => {
-    https
+    // https
+    http
       .get(
-        `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
-          { families, hashes: true },
-        )}`,
+        `http://localhost:8080/v3/npm/assets/${secret}?${querystring.encode({
+          families,
+          hashes: true,
+        })}`,
         {
           headers: { 'Content-Type': 'application/json' },
         },
