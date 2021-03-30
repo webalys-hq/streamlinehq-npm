@@ -1,0 +1,39 @@
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+img, svg {
+  display: block;
+  margin: 25px 0;
+}
+
+figure {
+  padding: 5px 0 25px;
+  border-bottom: 1px solid #ccc;
+}
+
+figure:last-child {
+  border-bottom: none;
+}
+
+figure code {
+  display: block;
+  line-height: 30px;
+  background: khaki;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+p {
+  line-height: 25px;
+}
+
+.green path {
+  fill: green;
+}
+
+.red path {
+  stroke: red;
+}
