@@ -25,7 +25,7 @@ Warning, wrapper packages for React, Angular and Vue are deprecated and will be 
 It will execute the `postinstall` script which will fetch the graphical assets. The requested images in a form of SVG files will be put in the package's `images` folder. After this you will be able to import those images as usual in your project, eg:
 ```jsx
 // This is just an svg file. You can then use it in your <img> tag.
-import checkCircle1 from '@streamlinehq/streamlinehq/img/streamline-bold/check-circle-1.svg'
+import checkCircle1 from '@streamlinehq/streamlinehq/img/streamline-bold/check-circle-1-jUA7gT.svg'
 ```
 
 ## How to change style, size, etc

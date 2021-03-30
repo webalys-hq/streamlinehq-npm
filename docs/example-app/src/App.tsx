@@ -1,12 +1,12 @@
 import React from 'react'
-import touchId2 from '@streamlinehq/streamlinehq/img/streamline-regular/touch-id-2-HfbcEF.svg'
-import alertUser from '@streamlinehq/streamlinehq/img/streamline-regular/alert-user-MwbG4N.svg'
-import { ReactComponent as House3 } from '@streamlinehq/streamlinehq/img/streamline-bold/house-3-K0XEIs.svg'
-import zoomIn from '@streamlinehq/streamlinehq/img/streamline-bold/zoom-in-xJP7Yj.svg'
-import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-share-hand-lock-hreiMz.svg'
-import interfaceFavoriteLike1 from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-favorite-like-1-P77RgW.svg'
-import avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/avatar-2-CySEP7.svg'
-import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/astronaut-robot-2-tkRmxY.svg'
+import touchId2 from '@streamlinehq/streamlinehq/img/streamline-regular/touch-id-2-7QUVhm.svg'
+import alertUser from '@streamlinehq/streamlinehq/img/streamline-regular/alert-user-eix3W1.svg'
+import { ReactComponent as House3 } from '@streamlinehq/streamlinehq/img/streamline-bold/house-3-jHWYo6.svg'
+import zoomIn from '@streamlinehq/streamlinehq/img/streamline-bold/zoom-in-y7qvcY.svg'
+import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-share-hand-lock-jHWIji.svg'
+import interfaceFavoriteLike1 from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-favorite-like-1-gWaSyC.svg'
+import avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/avatar-2-G8DuSw.svg'
+import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/astronaut-robot-2-kxzfc9.svg'
 
 import './App.css'
 
@@ -46,12 +46,12 @@ const App = () => (
         </a>
       </h2>
       <figure>
-        <code>{`import touchId2 from '@streamlinehq/streamlinehq/img/streamline-regular/touch-id-2-HfbcEF.svg'`}</code>
+        <code>{`import touchId2 from '@streamlinehq/streamlinehq/img/streamline-regular/touch-id-2-7QUVhm.svg'`}</code>
         <code>{`<img src={touchId2} alt="Touch" width={100} height={100}/>`}</code>
         <img src={touchId2} alt="Touch" width={100} height={100} />
       </figure>
       <figure>
-        <code>{`import alertUser from '@streamlinehq/streamlinehq/img/streamline-regular/alert-user-MwbG4N.svg'`}</code>
+        <code>{`import alertUser from '@streamlinehq/streamlinehq/img/streamline-regular/alert-user-eix3W1.svg'`}</code>
         <code>{`<img src={alertUser} alt="Alert" style={{background: 'blue', padding: '10px'}} width={150} height={150}/>`}</code>
         <img
           src={alertUser}
@@ -69,12 +69,12 @@ const App = () => (
         </a>
       </h2>
       <figure>
-        <code>{`import { ReactComponent as House3 } from '@streamlinehq/streamlinehq/img/streamline-bold/house-3-K0XEIs.svg'`}</code>
+        <code>{`import { ReactComponent as House3 } from '@streamlinehq/streamlinehq/img/streamline-bold/house-3-jHWYo6.svg'`}</code>
         <code>{`<House3 className="green"/>`}</code>
         <House3 className="green" />
       </figure>
       <figure>
-        <code>{`import zoomIn from '@streamlinehq/streamlinehq/img/streamline-bold/zoom-in-xJP7Yj.svg'`}</code>
+        <code>{`import zoomIn from '@streamlinehq/streamlinehq/img/streamline-bold/zoom-in-y7qvcY.svg'`}</code>
         <code>{`<img src={zoomIn} alt="Zoom" />`}</code>
         <img src={zoomIn} alt="Zoom" />
       </figure>
@@ -86,12 +86,12 @@ const App = () => (
         </a>
       </h2>
       <figure>
-        <code>{`import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-share-hand-lock-hreiMz.svg'`}</code>
+        <code>{`import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-share-hand-lock-jHWIji.svg'`}</code>
         <code>{`<InterfaceShareHandLock width={100} height={100} className="green"/>`}</code>
         <InterfaceShareHandLock width={100} height={100} className="green" />
       </figure>
       <figure>
-        <code>{`import interfaceFavoriteLike1 from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-favorite-like-1-P77RgW.svg'`}</code>
+        <code>{`import interfaceFavoriteLike1 from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-favorite-like-1-gWaSyC.svg'`}</code>
         <code>{`<img src={interfaceFavoriteLike1} alt="Like" />`}</code>
         <img src={interfaceFavoriteLike1} alt="Like" />
       </figure>
@@ -103,12 +103,12 @@ const App = () => (
         </a>
       </h2>
       <figure>
-        <code>{`import avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/avatar-2-CySEP7.svg'`}</code>
+        <code>{`import avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/avatar-2-G8DuSw.svg'`}</code>
         <code>{`<img src={avatar2} alt="Avatar" />`}</code>
         <img src={avatar2} alt="Avatar" />
       </figure>
       <figure>
-        <code>{`import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/astronaut-robot-2-tkRmxY.svg'`}</code>
+        <code>{`import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/astronaut-robot-2-kxzfc9.svg'`}</code>
         <code>{`<AstronautRobot2 width={250} height={250} className="red"/>`}</code>
         <AstronautRobot2 width={250} height={250} className="red" />
       </figure>

@@ -22,5 +22,5 @@ rollup.config.js
 tsconfig.json
 
 src/
-images/
+img/
 docs/
