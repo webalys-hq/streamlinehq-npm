@@ -24,7 +24,7 @@ async function getSVGs(
     https
       .get(
         `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
-          { families },
+          { families, hashes: true },
         )}`,
         {
           headers: { 'Content-Type': 'application/json' },
@@ -88,16 +88,19 @@ export async function installStreamlineAssets() {
       await Promise.all(
         Object.keys(getSVGsResponse.data).map(async (familySlug) => {
           const family = getSVGsResponse.data[familySlug]
-          return Object.keys(family).map(async (iconSlug) => {
-            const svg = family[iconSlug]
+          return Object.keys(family).map(async (iconSlugWithPartialHash) => {
+            const svg = family[iconSlugWithPartialHash]
 
             if (svg) {
               const folderPath = `${__dirname}/../images/${familySlug}`
               await mkdirSync(folderPath, { recursive: true })
-              return writeFileSync(`${folderPath}/${iconSlug}.svg`, svg)
+              return writeFileSync(
+                `${folderPath}/${iconSlugWithPartialHash}.svg`,
+                svg,
+              )
             } else {
               console.error(
-                `No SVG data is present for icon ${iconSlug} of family ${familySlug}, please report this issue to the Streamline team.`,
+                `No SVG data is present for icon ${iconSlugWithPartialHash} of family ${familySlug}, please report this issue to the Streamline team.`,
               )
             }
           })
