@@ -47,17 +47,19 @@ Alternatively you can use `streamlinehq.json` secret file. Please check [1.0.4 R
 
 In 80% of the cases you need to ensure that you have set up your env vars properly in your project and reinstall this package by removing it completely and then installing it again.
 
-Ensure that you have an active subscription to the Streamline family you want to download images from. Eg an error "You can not download XXX family in SVG" means that you don't have an active license for a XXX family. Please contact the Streamline team on support@webalys.com if you have purchased the valid license, and it still doesn't let you download the family.
+Ensure that you have an active subscription for the Streamline family you want to download images from. Eg an error "You can not download XXX family in SVG" means that you don't have an active license for a XXX family. Please contact the Streamline team on support@webalys.com if you have purchased the valid license, and it still doesn't let you download the family's images.
 
-[Before installing this package you need to have any previous Streamline configuration removed](https://github.com/webalys-hq/streamlinehq-npm/issues/5). If you had private Streamline packages installed you have most likely configured your npm/yarn to pass an npm token to Cloudsmith. This configuration isn't needed anymore, and it can prevent this package from being installed. Remove (or temporarily rename) your `.npmrc` file in your project and remove any streamline configuration lines you might have added to yarn/npm config.
+[Before installing this package you need to have any previous Streamline configuration removed](https://github.com/webalys-hq/streamlinehq-npm/issues/5). If you had private Streamline packages installed you have most likely configured your npm/yarn to pass an npm token to Cloudsmith. This configuration isn't needed anymore, and it can prevent this package from being installed. Remove (or temporarily rename) your `.npmrc` file in your project and remove any Streamline configuration lines you might have added to yarn/npm config.
 
 Make sure that you're using the package's latest version.
 
 Note that because of fetching images installation might take longer than usual.
 
-Double check that images have been installed in your `node_modules/@streamlinehq/streamlinehq/img` folder. If not - try reinstalling on a better internet connection.
+Before opening an issue double check that images have been installed in your `node_modules/@streamlinehq/streamlinehq/img` folder. If not - try reinstalling on a better internet connection or checking the error message.
 
-Please check the [issues list](https://github.com/webalys-hq/streamlinehq-npm/issues) in the repository of the package: maybe it has an answer for you. If there is none please open a new issue and describe the problem you're having: we will respond to you there shortly.
+Before opening an issue ensure that your project can build and render any other `.svg` files.
+
+Please check the [issues list](https://github.com/webalys-hq/streamlinehq-npm/issues): maybe it has an answer for you. If there is none please open a new issue and describe the problem, we will respond shortly.
 
 ## How to dev
 <details>
@@ -65,9 +67,9 @@ Please check the [issues list](https://github.com/webalys-hq/streamlinehq-npm/is
 
 Pull requests and any suggestions are welcome!
 
-1. Fork a project, clone it (as of now it will not fetch the images as there is no `streamlinehq.json` file, feel free to ignore the error). Work on new features or fixes in a separate branch.
+1. Fork a project, clone it (as of now it will not fetch the images as there is no `.env` file in the parent folder, feel free to ignore the error). Work on new features or fixes in a separate branch.
 2. Run `npm run dev` to compile a project on any code change.
-3. Use an example app in `docs/example-app` folder to experiment with this package. Alter it so it uses a local version of the `@stremlinehq/streamlinehq` package. Read its README for more instructions.
+3. Use an example app in `docs/latest/example-app` folder to experiment with this package. Alter it so it uses a local version of the `@stremlinehq/streamlinehq` package. Read its README for more instructions.
 4. Once done, open a pull request against `master` and wait for a review.
 </details>
 
@@ -79,5 +81,5 @@ Once changes are made, do the following:
 1. Increment a version in `package.json`
 2. Run `npm run build` to create a new build
 3. Run `npm publish --access public`
-4. Change the example app code in the next pull request to use the latest version of this package.
+4. Change the example app code in the next pull request to use the latest version of this package. Increment its version too.
 </details>
