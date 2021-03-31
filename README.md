@@ -22,7 +22,7 @@ Warning, wrapper packages for React, Angular and Vue are deprecated and will be 
     - `secret`: your private npm token which is taken from [Streamline developer page](https://app.streamlinehq.com/profile/developer)
 6. Finally, install the package in your project with npm or npm `npm install @streamlinehq/streamlinehq`.
 
-It will execute the `postinstall` script which will fetch the graphical assets. The requested images in a form of SVG files will be put in the package's `images` folder. After this you will be able to import those images as usual in your project, eg:
+It will execute the `postinstall` script which will fetch the graphical assets. The requested images in a form of SVG files will be put in the package's `img` folder. After this you will be able to import those images as usual in your project, eg:
 ```jsx
 // This is just an svg file. You can then use it in your <img> tag.
 import checkCircle1 from '@streamlinehq/streamlinehq/img/streamline-bold/check-circle-1-jUA7gT.svg'
@@ -39,7 +39,7 @@ Another option is to use an IDE which suggests you to autocomplete a path to an 
 <img width="1171" alt="Screenshot 2021-03-31 at 10 39 32" src="https://user-images.githubusercontent.com/1615659/113108269-7af46800-920d-11eb-8c57-16bb30edc34f.png">
 
 ## How to change style, size, etc
-Streamline images are just svg files. As a rule of thumb you should either render them as images and change the styles of the `<img>` tag, either inline render them as svg and change styles with css. Check out an example app's code to see more options.
+Streamline images are just svg files. As a rule of thumb you should either render them as images and change the styles of the `<img>` tag, either inline render them as svg and change styles with css. Check out an example app's code to see more options. Please note that your project's build system must know how to handle `.svg` files. For instance, `create-react-app` does that out of the box.
 
 ## Troubleshooting
 
@@ -53,7 +53,7 @@ Make sure that you're using the package's latest version.
 
 Note that because of fetching images installation might take longer than usual.
 
-Double check that images have been installed in your `node_modules/@streamlinehq/streamlinehq/images` folder. If not - try reinstalling on a better internet connection.
+Double check that images have been installed in your `node_modules/@streamlinehq/streamlinehq/im` folder. If not - try reinstalling on a better internet connection.
 
 Please check the [issues list](https://github.com/webalys-hq/streamlinehq-npm/issues) in the repository of the package: maybe it has an answer for you. If there is none please open a new issue and describe the problem you're having: we will respond to you there shortly.
 
