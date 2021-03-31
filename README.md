@@ -11,7 +11,7 @@ Warning, wrapper packages for React, Angular and Vue are deprecated and will be 
 
 ## How to use
 1. Ensure that you have an active Streamline subscription.
-2. Fill your project's private `.env` file with `STREAMLINE_FAMILIES` and `STREAMLINE_SECRET` variables. Check `.env.example` file in this repo for an example.
+2. Fill your project's private `.env` file with `STREAMLINE_FAMILIES` and `STREAMLINE_SECRET` variables. Check `.env.example` file in `docs/latest/example-app`  for an example.
   - `STREAMLINE_FAMILIES`: an array of strings with names of Streamline icons or illustrations families you own and which you want to include in your project. You can take the name from its url in Streamline. Eg a name of Brooklyn Illustrations from page https://app.streamlinehq.com/illustrations-brooklyn is `illustrations-brooklyn`.
   - `STREAMLINE_SECRET`: your private npm token which is taken from [Streamline developer page](https://app.streamlinehq.com/profile/developer). Don't share this with anybody and keep it out of any public repos.
 3. Install the package in your project `npm install @streamlinehq/streamlinehq`.
