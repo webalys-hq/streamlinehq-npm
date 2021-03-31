@@ -28,6 +28,16 @@ It will execute the `postinstall` script which will fetch the graphical assets. 
 import checkCircle1 from '@streamlinehq/streamlinehq/img/streamline-bold/check-circle-1-jUA7gT.svg'
 ```
 
+## How to find a path to a Streamline image
+
+1. Go to [Streamline website](https://app.streamlinehq.com)
+2. Select a family you're interested in
+3. Select an icon you're interested in and see the import path in the sidebar:
+<img width="1621" alt="Screenshot 2021-03-31 at 10 38 30" src="https://user-images.githubusercontent.com/1615659/113110833-35856a00-9210-11eb-8689-f3531984808e.png">
+
+Another option is to use an IDE which suggests you to autocomplete a path to an image:
+<img width="1171" alt="Screenshot 2021-03-31 at 10 39 32" src="https://user-images.githubusercontent.com/1615659/113108269-7af46800-920d-11eb-8c57-16bb30edc34f.png">
+
 ## How to change style, size, etc
 Streamline images are just svg files. As a rule of thumb you should either render them as images and change the styles of the `<img>` tag, either inline render them as svg and change styles with css. Check out an example app's code to see more options.
 
