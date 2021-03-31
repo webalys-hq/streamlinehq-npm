@@ -12,8 +12,8 @@ Warning, wrapper packages for React, Angular and Vue are deprecated and will be 
 ## How to use
 1. Ensure that you have an active Streamline subscription.
 2. Fill your project's private `.env` file with `STREAMLINE_FAMILIES` and `STREAMLINE_SECRET` variables. Check `.env.example` file in this repo for an example.
-  - `families`: an array of strings with names of Streamline icons or illustrations families you own and which you want to include in your project. You can take the name from its url in Streamline. Eg a name of Brooklyn Illustrations from page https://app.streamlinehq.com/illustrations-brooklyn is `illustrations-brooklyn`.
-  - `secret`: your private npm token which is taken from [Streamline developer page](https://app.streamlinehq.com/profile/developer). Don't share this with anybody and keep it out of any public repos.
+  - `STREAMLINE_FAMILIES`: an array of strings with names of Streamline icons or illustrations families you own and which you want to include in your project. You can take the name from its url in Streamline. Eg a name of Brooklyn Illustrations from page https://app.streamlinehq.com/illustrations-brooklyn is `illustrations-brooklyn`.
+  - `STREAMLINE_SECRET`: your private npm token which is taken from [Streamline developer page](https://app.streamlinehq.com/profile/developer). Don't share this with anybody and keep it out of any public repos.
 3. Install the package in your project `npm install @streamlinehq/streamlinehq`.
 
 It will execute the `postinstall` script which will fetch the graphical assets. The requested images in a form of SVG files will be put in the package's `img` folder. After this you will be able to import those images as usual in your project, eg:
@@ -40,6 +40,7 @@ Please note that your project's build system must know how to handle `.svg` file
 
 ### I cannot use `.env` file, which options do I have?
 You can set `STREAMLINE_FAMILIES` and `STREAMLINE_SECRET` variables in your shell so that the script can take them from `process.env`.
+
 Alternatively you can use `streamlinehq.json` secret file. Please check [1.0.4 README](https://github.com/webalys-hq/streamlinehq-npm/tree/1.0.4) for how to do that.
 
 ## Troubleshooting
@@ -58,7 +59,7 @@ Double check that images have been installed in your `node_modules/@streamlinehq
 
 Please check the [issues list](https://github.com/webalys-hq/streamlinehq-npm/issues) in the repository of the package: maybe it has an answer for you. If there is none please open a new issue and describe the problem you're having: we will respond to you there shortly.
 
-##How to dev
+## How to dev
 <details>
 <summary>Click to expand</summary>
 
