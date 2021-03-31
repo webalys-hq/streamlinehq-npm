@@ -1,11 +1,11 @@
-import { fileURLToPath } from 'url'
-import { dirname } from 'path'
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import querystring from 'querystring'
 import https from 'https'
+import {config} from "dotenv";
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const projectFolderPath = `${__dirname}/../../../..`
+
+config({ path: `${projectFolderPath}/.env` })
 
 export interface StreamlineResponse {
   success: boolean
@@ -46,13 +46,13 @@ async function getSVGs(
                 statusCode: resp.statusCode,
               })
             } catch (e) {
-              console.log('Error parsing JSON')
+              console.error('Error parsing JSON from request')
             }
           })
         },
       )
       .on('error', (err) => {
-        console.log('Error: ' + err.message)
+        console.error('API error: ' + err.message)
         reject(err)
       })
   })
@@ -60,14 +60,43 @@ async function getSVGs(
 
 export async function installStreamlineAssets() {
   try {
-    const url = `${__dirname}/../../../../streamlinehq.json`
-    const file = await readFileSync(url).toString()
-    const streamlineConfiguration = JSON.parse(file)
-    console.debug(
-      `Installing Streamline assets for ${streamlineConfiguration.families.join(
-        ', ',
-      )} families based on configuration file ${url}...`,
-    )
+    let envValid = true
+    let streamlineConfiguration: {families: string[], secret: string} = {
+      families: null,
+      secret: null
+    }
+
+    // Try getting variables from env first
+    try {
+      streamlineConfiguration = {
+        families: JSON.parse(process.env.STREAMLINE_FAMILIES),
+        secret: process.env.STREAMLINE_SECRET,
+      }
+    } catch (e) {
+      if (e.name === 'SyntaxError') {
+        console.error('STREAMLINE_FAMILIES env var must be proper JSON')
+        envValid = false
+      } else {
+        console.error(e)
+      }
+    }
+
+    // If env does not have all variables or it's invalid -- check the config file.
+    // @deprecated
+    if (!envValid || !streamlineConfiguration.families || !streamlineConfiguration.secret) {
+      const url = `${projectFolderPath}/streamlinehq.json`
+      const file = await readFileSync(url).toString()
+      const fileConfiguration = JSON.parse(file)
+
+      // Overwrite only those with values from .streamlinehq.json which aren't set in env
+      if (!streamlineConfiguration.families) {
+        streamlineConfiguration.families = fileConfiguration.families
+      }
+      if (!streamlineConfiguration.secret) {
+        streamlineConfiguration.secret = fileConfiguration.secret
+      }
+    }
+
     if (
       !streamlineConfiguration.families ||
       !streamlineConfiguration.families.length
@@ -81,6 +110,12 @@ export async function installStreamlineAssets() {
         'secret key must be present and filled with your private streamline secret token',
       )
     }
+
+    console.debug(
+      `Installing Streamline assets for ${streamlineConfiguration.families.join(
+        ', ',
+      )} families`,
+    )
 
     const getSVGsResponse = await getSVGs(
       streamlineConfiguration.secret,
@@ -121,9 +156,9 @@ export async function installStreamlineAssets() {
   } catch (e) {
     console.log(e.name)
     if (e.code === 'ENOENT') {
-      console.error('.streamlinehq.json file must be present in parent folder')
+      console.error('STREAMLINE_FAMILIES and STREAMLINE_SECRET must be set in your env or .streamlinehq.json file must be present in parent folder')
     } else if (e.name === 'SyntaxError') {
-      console.error('.streamlinehq.json file must be proper JSON')
+      console.error('STREAMLINE_FAMILIES and STREAMLINE_SECRET must be set in your env or .streamlinehq.json file must be proper JSON')
     } else {
       console.error(e)
     }
