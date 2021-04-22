@@ -61,6 +61,17 @@ const App = () => (
           height={150}
         />
       </figure>
+      <figure>
+        <code>{`import alertUser from '@streamlinehq/streamlinehq/img/streamline-regular/alert-user-eix3W1.svg'`}</code>
+        <code>{`<img src={alertUser} alt="Alert" style={{background: 'yellow', padding: '10px'}} width={16} height={16}/>`}</code>
+        <img
+          src={alertUser}
+          alt="Alert"
+          style={{ background: 'yellow', padding: '10px' }}
+          width={16}
+          height={16}
+        />
+      </figure>
     </section>
     <section>
       <h2>
