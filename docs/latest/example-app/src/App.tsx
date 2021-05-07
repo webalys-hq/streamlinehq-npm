@@ -7,6 +7,7 @@ import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamli
 import interfaceFavoriteLike1 from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-favorite-like-1-gWaSyC.svg'
 import avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/avatar-2-G8DuSw.svg'
 import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/astronaut-robot-2-kxzfc9.svg'
+import AvatarStar2 from '@streamlinehq/streamlinehq/img/illustrations-duotone/avatar-star-2-fyZaeM.svg'
 
 import './App.css'
 
@@ -122,6 +123,18 @@ const App = () => (
         <code>{`import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/astronaut-robot-2-kxzfc9.svg'`}</code>
         <code>{`<AstronautRobot2 width={250} height={250} className="red"/>`}</code>
         <AstronautRobot2 width={250} height={250} className="red" />
+      </figure>
+    </section>
+    <section>
+      <h2>
+        <a href="https://app.streamlinehq.com/illustrations/illustrations-duotone">
+          Streamline UX – Duotone
+        </a>
+      </h2>
+      <figure>
+        <code>{`import AvatarStar2 from '@streamlinehq/streamlinehq/img/illustrations-duotone/avatar-star-2-fyZaeM.svg'`}</code>
+        <code>{`<img src={AvatarStar2} alt="Avatar" />`}</code>
+        <img src={AvatarStar2} alt="Avatar" />
       </figure>
     </section>
   </main>
