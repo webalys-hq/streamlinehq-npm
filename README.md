@@ -45,7 +45,7 @@ Alternatively you can use `streamlinehq.json` secret file. Please check [1.0.4 R
 
 ## Troubleshooting
 
-In 80% of the cases you need to ensure that you have set up your env vars properly in your project and reinstall this package by removing it completely and then installing it again.
+In 80% of the cases you need to ensure that you have set up your env vars properly in your project and reinstall this package by removing it completely and then installing it again, eg with `rm -rf node_modules && npm i`.
 
 Ensure that you have an active subscription for the Streamline family you want to download images from. Eg an error "You can not download XXX family in SVG" means that you don't have an active license for a XXX family. Please contact the Streamline team on support@webalys.com if you have purchased the valid license, and it still doesn't let you download the family's images.
 
