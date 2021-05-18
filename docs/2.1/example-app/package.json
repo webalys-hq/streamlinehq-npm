@@ -1,6 +1,6 @@
 {
   "name": "example-app",
-  "version": "3.0.0",
+  "version": "2.1.0",
   "private": true,
   "dependencies": {
     "@streamlinehq/streamlinehq": "^2.1.0",
@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "reinstall": "rm -rf node_modules/@streamlinehq && npm i",
-    "reinstall:local": "npm pack ../../../ && rm -rf node_modules/@streamlinehq && npm install streamlinehq-streamlinehq-3.0.0.tgz"
+    "reinstall:local": "npm pack ../../../ && rm -rf node_modules/@streamlinehq && npm install streamlinehq-streamlinehq-2.1.0.tgz"
   },
   "eslintConfig": {
     "extends": [
