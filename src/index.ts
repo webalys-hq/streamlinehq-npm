@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import querystring from 'querystring'
 import https from 'https'
-import {config} from "dotenv";
+import { config } from 'dotenv'
 
 const projectFolderPath = `${__dirname}/../../../..`
 
@@ -21,12 +21,15 @@ async function getSVGs(
   families: string[],
 ): Promise<StreamlineResponse> {
   return new Promise((resolve, reject) => {
+    const skipOptimize = process.env.STREAMLINE_OPTIMIZE_IMAGES === 'false'
     https
       .get(
         `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
           {
             families,
             hashes: true,
+            // true by default
+            optimize: !skipOptimize,
           },
         )}`,
         {
@@ -61,9 +64,9 @@ async function getSVGs(
 export async function installStreamlineAssets() {
   try {
     let envValid = true
-    let streamlineConfiguration: {families: string[], secret: string} = {
+    let streamlineConfiguration: { families: string[]; secret: string } = {
       families: null,
-      secret: null
+      secret: null,
     }
 
     // Try getting variables from env first
@@ -83,7 +86,11 @@ export async function installStreamlineAssets() {
 
     // If env does not have all variables or it's invalid -- check the config file.
     // @deprecated
-    if (!envValid || !streamlineConfiguration.families || !streamlineConfiguration.secret) {
+    if (
+      !envValid ||
+      !streamlineConfiguration.families ||
+      !streamlineConfiguration.secret
+    ) {
       const url = `${projectFolderPath}/streamlinehq.json`
       const file = await readFileSync(url).toString()
       const fileConfiguration = JSON.parse(file)
@@ -156,9 +163,13 @@ export async function installStreamlineAssets() {
   } catch (e) {
     console.log(e.name)
     if (e.code === 'ENOENT') {
-      console.error('STREAMLINE_FAMILIES and STREAMLINE_SECRET must be set in your env or .streamlinehq.json file must be present in parent folder')
+      console.error(
+        'STREAMLINE_FAMILIES and STREAMLINE_SECRET must be set in your env or .streamlinehq.json file must be present in parent folder',
+      )
     } else if (e.name === 'SyntaxError') {
-      console.error('STREAMLINE_FAMILIES and STREAMLINE_SECRET must be set in your env or .streamlinehq.json file must be proper JSON')
+      console.error(
+        'STREAMLINE_FAMILIES and STREAMLINE_SECRET must be set in your env or .streamlinehq.json file must be proper JSON',
+      )
     } else {
       console.error(e)
     }

@@ -55,6 +55,8 @@ Make sure that you're using the package's latest version.
 
 Note that because of fetching images installation might take longer than usual.
 
+If you have issues with images being rendered and they used to render properly before, you can try temporarily disabling on-the-go optimization by setting `STREAMLINE_OPTIMIZE_IMAGES=false` in your `.env`.
+
 Before opening an issue double check that images have been installed in your `node_modules/@streamlinehq/streamlinehq/img` folder. If not - try reinstalling on a better internet connection or checking the error message.
 
 Before opening an issue ensure that your project can build and render any other `.svg` files.
@@ -69,7 +71,7 @@ Pull requests and any suggestions are welcome!
 
 1. Fork a project, clone it (as of now it will not fetch the images as there is no `.env` file in the parent folder, feel free to ignore the error). Work on new features or fixes in a separate branch.
 2. Run `npm run dev` to compile a project on any code change.
-3. Use an example app in `docs/latest/example-app` folder to experiment with this package. Alter it so it uses a local version of the `@stremlinehq/streamlinehq` package. Read its README for more instructions.
+3. Use an example app in `docs/latest/example-app` folder to experiment with this package. Alter it, so it uses a local version of the `@stremlinehq/streamlinehq` package. Read its README for more instructions.
 4. Once done, open a pull request against `master` and wait for a review.
 </details>
 
