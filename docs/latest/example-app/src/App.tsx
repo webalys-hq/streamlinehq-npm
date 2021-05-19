@@ -1,14 +1,15 @@
 import React from 'react'
 import TouchId2 from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/touchid/touch-id-2.svg'
 import AlertUser from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/alerts/alert-user.svg'
+import { ReactComponent as Server3 } from '@streamlinehq/streamlinehq/img/streamline-regular/internet-networks-servers/servers/server-3.svg'
 import { ReactComponent as House3 } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-essential/home/interface-home-3.svg'
+import TravelHotel5Star from '@streamlinehq/streamlinehq/img/streamline-mini-bold/maps-travel/hotel/travel-hotel-5-star.svg'
 import ZoomIn from '@streamlinehq/streamlinehq/img/streamline-bold/interface-essential/zoom/zoom-in.svg'
 import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-essential/share/interface-share-hand-lock.svg'
 import InterfaceFavoriteLike1 from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-essential/bookmark-favorite/interface-favorite-like-1.svg'
 import Avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/users/users/avatar-2.svg'
 import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/robot/robots-explorer/astronaut-robot-2.svg'
 import AvatarStar2 from '@streamlinehq/streamlinehq/img/illustrations-duotone/users/super-users-admin/avatar-star-2.svg'
-import { ReactComponent as Server3 } from '@streamlinehq/streamlinehq/img/streamline-regular/internet-networks-servers/servers/server-3.svg'
 
 import './App.css'
 
@@ -76,11 +77,6 @@ const App = () => (
         </a>
       </h2>
       <figure>
-        <code>{`import { ReactComponent as House3 } from '@streamlinehq/streamlinehq/img/streamline-micro-bold/interface-essential/home/interface-home-3.svg'`}</code>
-        <code>{`<House3 className="green" width={100}/>`}</code>
-        <House3 className="green" width={100} />
-      </figure>
-      <figure>
         <code>{`import ZoomIn from '@streamlinehq/streamlinehq/img/streamline-bold/interface-essential/zoom/zoom-in.svg'`}</code>
         <code>{`<img src={ZoomIn} alt="Zoom" height={50} />`}</code>
         <img src={ZoomIn} alt="Zoom" height={50} />
@@ -92,6 +88,11 @@ const App = () => (
           Streamline-mini-bold
         </a>
       </h2>
+      <figure>
+        <code>{`import { ReactComponent as House3 } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-essential/home/interface-home-3.svg'`}</code>
+        <code>{`<House3 className="green" width={100}/>`}</code>
+        <House3 className="green" width={100} />
+      </figure>
       <figure>
         <code>{`import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-essential/share/interface-share-hand-lock.svg'`}</code>
         <code>{`
@@ -113,6 +114,23 @@ const App = () => (
         <code>{`import InterfaceFavoriteLike1 from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-essential/bookmark-favorite/interface-favorite-like-1.svg'`}</code>
         <code>{`<img src={InterfaceFavoriteLike1} alt="Like" width={75} />`}</code>
         <img src={InterfaceFavoriteLike1} alt="Like" width={75} />
+      </figure>
+      <figure>
+        <code>{`import TravelHotel5Star from '@streamlinehq/streamlinehq/img/streamline-mini-bold/maps-travel/hotel/travel-hotel-5-star.svg'`}</code>
+        <code>{`
+          <img
+            src={TravelHotel5Star}
+            alt="5 star"
+            width={75}
+            style={{ background: 'red' }}
+          />
+        `}</code>
+        <img
+          src={TravelHotel5Star}
+          alt="5 star"
+          width={75}
+          style={{ background: 'red' }}
+        />
       </figure>
     </section>
     <section>
