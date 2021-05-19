@@ -1,9 +1,13 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import querystring from 'querystring'
+// For local dev
+// import http from 'http'
 import https from 'https'
 import { config } from 'dotenv'
 
 const projectFolderPath = `${__dirname}/../../../..`
+// For local dev
+// const projectFolderPath = `${__dirname}/..`
 
 config({ path: `${projectFolderPath}/.env` })
 
@@ -22,12 +26,17 @@ async function getSVGs(
 ): Promise<StreamlineResponse> {
   return new Promise((resolve, reject) => {
     const skipOptimize = process.env.STREAMLINE_OPTIMIZE_IMAGES === 'false'
+
     https
+      // For local dev
+      // http
       .get(
+        // For local dev
+        // `http://localhost:8080/v3/npm/assets/${secret}?${querystring.encode(
         `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
           {
             families,
-            hashes: true,
+            categories: true,
             // true by default
             optimize: !skipOptimize,
           },
@@ -44,6 +53,7 @@ async function getSVGs(
 
           resp.on('end', () => {
             try {
+              // console.log(data)
               resolve({
                 ...JSON.parse(data),
                 statusCode: resp.statusCode,
@@ -77,7 +87,9 @@ export async function installStreamlineAssets() {
       }
     } catch (e) {
       if (e.name === 'SyntaxError') {
-        console.error('STREAMLINE_FAMILIES env var must be proper JSON')
+        console.error(
+          'Error while reading env vars: STREAMLINE_FAMILIES env var must be proper JSON',
+        )
         envValid = false
       } else {
         console.error(e)
@@ -91,6 +103,7 @@ export async function installStreamlineAssets() {
       !streamlineConfiguration.families ||
       !streamlineConfiguration.secret
     ) {
+      console.debug('Reading streamlinehq.json config file')
       const url = `${projectFolderPath}/streamlinehq.json`
       const file = await readFileSync(url).toString()
       const fileConfiguration = JSON.parse(file)
@@ -133,19 +146,21 @@ export async function installStreamlineAssets() {
       await Promise.all(
         Object.keys(getSVGsResponse.data).map(async (familySlug) => {
           const family = getSVGsResponse.data[familySlug]
-          return Object.keys(family).map(async (iconSlugWithPartialHash) => {
-            const svg = family[iconSlugWithPartialHash]
+          return Object.keys(family).map(async (imageImportKey) => {
+            const svg = family[imageImportKey]
 
+            const [
+              categorySlug,
+              subcategorySlug,
+              iconSlug,
+            ] = imageImportKey.split('/')
             if (svg) {
-              const folderPath = `${__dirname}/../img/${familySlug}`
+              const folderPath = `${__dirname}/../img/${familySlug}/${categorySlug}/${subcategorySlug}`
               await mkdirSync(folderPath, { recursive: true })
-              return writeFileSync(
-                `${folderPath}/${iconSlugWithPartialHash}.svg`,
-                svg,
-              )
+              return writeFileSync(`${folderPath}/${iconSlug}.svg`, svg)
             } else {
               console.error(
-                `No SVG data is present for icon ${iconSlugWithPartialHash} of family ${familySlug}, please report this issue to the Streamline team.`,
+                `No SVG data is present for icon ${imageImportKey} of family ${familySlug}, please report this issue to the Streamline team.`,
               )
             }
           })
