@@ -8,6 +8,7 @@ import InterfaceFavoriteLike1 from '@streamlinehq/streamlinehq/img/streamline-mi
 import Avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/users/users/avatar-2.svg'
 import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/robot/robots-explorer/astronaut-robot-2.svg'
 import AvatarStar2 from '@streamlinehq/streamlinehq/img/illustrations-duotone/users/super-users-admin/avatar-star-2.svg'
+import { ReactComponent as Server3 } from '@streamlinehq/streamlinehq/img/streamline-regular/internet-networks-servers/servers/server-3.svg'
 
 import './App.css'
 
@@ -61,6 +62,11 @@ const App = () => (
           width={150}
           height={150}
         />
+      </figure>
+      <figure>
+        <code>{`import { ReactComponent as Server3 } from '@streamlinehq/streamlinehq/img/streamline-regular/internet-networks-servers/servers/server-3.svg'`}</code>
+        <code>{`<Server3 width={100} className="green" />`}</code>
+        <Server3 width={100} className="green" />
       </figure>
     </section>
     <section>

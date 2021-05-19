@@ -36,6 +36,7 @@ Another option is to use an IDE which suggests you to autocomplete a path to an 
 
 ### How to change style, size, etc
 Streamline images are just `.svg` files. As a rule of thumb you should either render them as images and change the styles of the `<img>` tag, either inline render them as svg and change styles with css. Check out an example app's code to see more options.
+Some images can be styled directly by passing `fill` or `stroke` attributes (in React), while others can be styled only with CSS. When in doubt, check the image source file.
 Please note that your project's build system must know how to handle `.svg` files. For instance, `create-react-app` does that out of the box.
 
 ### I cannot use `.env` file, which options do I have?
