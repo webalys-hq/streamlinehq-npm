@@ -56,8 +56,6 @@ Make sure that you're using the package's latest version.
 
 Note that because of fetching images installation might take longer than usual.
 
-If you have issues with images being rendered and they used to render properly before, you can try temporarily disabling on-the-go optimization by setting `STREAMLINE_OPTIMIZE_IMAGES=false` in your `.env`.
-
 Before opening an issue double check that images have been installed in your `node_modules/@streamlinehq/streamlinehq/img` folder. If not - try reinstalling on a better internet connection or checking the error message.
 
 Before opening an issue ensure that your project can build and render any other `.svg` files.

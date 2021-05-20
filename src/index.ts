@@ -1,12 +1,12 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import querystring from 'querystring'
 // For local dev
-// import http from 'http'
-import https from 'https'
+import http from 'http'
+// import https from 'https'
 import { config } from 'dotenv'
 
 const projectFolderPath = `${__dirname}/../../../..`
-// For local dev
+// Needed when running npm start locally directly
 // const projectFolderPath = `${__dirname}/..`
 
 config({ path: `${projectFolderPath}/.env` })
@@ -25,20 +25,17 @@ async function getSVGs(
   families: string[],
 ): Promise<StreamlineResponse> {
   return new Promise((resolve, reject) => {
-    const skipOptimize = process.env.STREAMLINE_OPTIMIZE_IMAGES === 'false'
-
-    https
-      // For local dev
-      // http
+    // https
+    // For local dev
+    http
       .get(
         // For local dev
-        // `http://localhost:8080/v3/npm/assets/${secret}?${querystring.encode(
-        `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
+        `http://localhost:8080/v3/npm/assets/${secret}?${querystring.encode(
+          // `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
           {
             families,
             categories: true,
-            // true by default
-            optimize: !skipOptimize,
+            straightforward: true,
           },
         )}`,
         {

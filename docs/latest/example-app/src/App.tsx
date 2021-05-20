@@ -1,6 +1,7 @@
 import React from 'react'
 import TouchId2 from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/touchid/touch-id-2.svg'
 import AlertUser from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/alerts/alert-user.svg'
+import SatelliteSignal from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/interface-essential/satellite-signal.svg'
 import { ReactComponent as Server3 } from '@streamlinehq/streamlinehq/img/streamline-regular/internet-networks-servers/servers/server-3.svg'
 import { ReactComponent as House3 } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-essential/home/interface-home-3.svg'
 import TravelHotel5Star from '@streamlinehq/streamlinehq/img/streamline-mini-bold/maps-travel/hotel/travel-hotel-5-star.svg'
@@ -52,6 +53,11 @@ const App = () => (
         <code>{`import TouchId2 from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/touchid/touch-id-2.svg'`}</code>
         <code>{`<img src={TouchId2} alt="Touch" width={100} height={100}/>`}</code>
         <img src={TouchId2} alt="Touch" width={100} height={100} />
+      </figure>
+      <figure>
+        <code>{`import SatelliteSignal from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/interface-essential/satellite-signal.svg'`}</code>
+        <code>{`<img src={SatelliteSignal} alt="Satellite" width={150} />`}</code>
+        <img src={SatelliteSignal} alt="Satellite" width={150} />
       </figure>
       <figure>
         <code>{`import AlertUser from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/alerts/alert-user.svg'`}</code>
