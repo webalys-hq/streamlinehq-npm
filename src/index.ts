@@ -50,7 +50,6 @@ async function getSVGs(
 
           resp.on('end', () => {
             try {
-              // console.log(data)
               resolve({
                 ...JSON.parse(data),
                 statusCode: resp.statusCode,
