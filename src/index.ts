@@ -1,8 +1,8 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import querystring from 'querystring'
 // For local dev
-import http from 'http'
-// import https from 'https'
+// import http from 'http'
+import https from 'https'
 import { config } from 'dotenv'
 
 const projectFolderPath = `${__dirname}/../../../..`
@@ -25,13 +25,13 @@ async function getSVGs(
   families: string[],
 ): Promise<StreamlineResponse> {
   return new Promise((resolve, reject) => {
-    // https
-    // For local dev
-    http
+    https
+      // For local dev
+      // http
       .get(
         // For local dev
-        `http://localhost:8080/v3/npm/assets/${secret}?${querystring.encode(
-          // `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
+        // `http://localhost:8080/v3/npm/assets/${secret}?${querystring.encode(
+        `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
           {
             families,
             categories: true,
