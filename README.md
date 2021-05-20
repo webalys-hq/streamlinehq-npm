@@ -2,12 +2,14 @@
 This is a small library which downloads Streamline assets you have access to into your local folder so that they can be used in your Javascript project.
 This is the only package you need to use Streamline assets, so please uninstall any old Streamline wrapper or private packages if you had them.
 
-It works with any framework or library. You just need NPM and a build system like Webpack which will handle `.svg` files.
+It works with any framework. You just need NPM and a build system like Webpack which will handle `.svg` files.
 
 Check an example app in the `docs/latest` folder.
 
 ## Deprecation of previous packages
-Warning, wrapper packages for React, Angular and Vue are deprecated and will be removed on June 1st 2021. Please use this new package instead, it provides a much better user experience.
+Warning, wrapper packages for React, Angular and Vue are deprecated and will be removed on July 1st 2021. Please use this new package instead, it provides a much better user experience.
+
+Also, on July 1st images in production for package version < 3.0 will change. Please update your package to 3.0 (if you haven't done so) before that date and ensure that images in your application are rendered correctly, otherwise you might get unexpected results. 
 
 ## How to use
 1. Ensure that you have an active Streamline subscription.
@@ -18,25 +20,21 @@ Warning, wrapper packages for React, Angular and Vue are deprecated and will be 
 
 It will execute the `postinstall` script which will fetch the graphical assets. The requested images in a form of SVG files will be put in the package's `img` folder. After this you will be able to import those images as usual in your project, eg:
 ```jsx
-// This is just an svg file. You can then use it in your <img> tag.
-import checkCircle1 from '@streamlinehq/streamlinehq/img/streamline-bold/check-circle-1-jUA7gT.svg'
+// This is just an svg file. You can then use it in your <img> tag or differently if your build system supports it.
+import SatelliteSignal from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/interface-essential/satellite-signal.svg'
 ```
 
 ## Q/A
 ### How to find a path to a Streamline image
-Each image has a certain immutable import path which consists of a human-readable part (eg `check-circle-1`) and a short hash (eg `jUA7gT`). It will never change so it's safe to use.
-
 1. Go to [Streamline website](https://app.streamlinehq.com)
 2. Select a family you're interested in
-3. Select an icon you're interested in and see the import path in the sidebar:
-   <img width="1621" alt="Screenshot 2021-03-31 at 10 38 30" src="https://user-images.githubusercontent.com/1615659/113110833-35856a00-9210-11eb-8689-f3531984808e.png">
+3. Select an icon you're interested in and see the import path in the sidebar.
 
-Another option is to use an IDE which suggests you to autocomplete a path to an image:
-<img width="1171" alt="Screenshot 2021-03-31 at 10 39 32" src="https://user-images.githubusercontent.com/1615659/113108269-7af46800-920d-11eb-8c57-16bb30edc34f.png">
+Another option is to use an IDE which suggests you to autocomplete a path to an image.
 
 ### How to change style, size, etc
-Streamline images are just `.svg` files. As a rule of thumb you should either render them as images and change the styles of the `<img>` tag, either inline render them as svg and change styles with css. Check out an example app's code to see more options.
-Some images can be styled directly by passing `fill` or `stroke` attributes (in React), while others can be styled only with CSS. When in doubt, check the image source file.
+Streamline images are just `.svg` files and the way to alter them depends on your build system and needs. As a rule of thumb you should either render them as images and change the styles of the `<img>` tag, either inline render them as svg and change styles with passing `stroke`/`fill` attributes or with css. Check out an example app's code to see more options.
+
 Please note that your project's build system must know how to handle `.svg` files. For instance, `create-react-app` does that out of the box.
 
 ### I cannot use `.env` file, which options do I have?
