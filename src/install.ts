@@ -69,12 +69,12 @@ async function getSVGs(
 
 export async function installStreamlineAssets() {
   try {
-    let envValid = true
     let streamlineConfiguration: { families: string[]; secret: string } = {
       families: null,
       secret: null,
     }
 
+    let envValid = true
     // Try getting variables from env first
     try {
       streamlineConfiguration = {

@@ -8,7 +8,9 @@ import typescript from '@rollup/plugin-typescript'
 const NODE_ENV = process.env.NODE_ENV || 'development'
 
 export default {
-  input: 'src/index.ts',
+  input: {
+    install: 'src/install.ts',
+  },
   output: {
     dir: 'build',
     format: 'cjs',
@@ -21,9 +23,9 @@ export default {
     }),
     babel({
       exclude: 'node_modules/**',
-      babelHelpers: 'runtime'
+      babelHelpers: 'runtime',
     }),
-    resolve({preferBuiltins: true}),
+    resolve({ preferBuiltins: true }),
     commonjs(),
     typescript({
       declaration: true,

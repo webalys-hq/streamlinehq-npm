@@ -1,7 +1,31 @@
+@media (prefers-color-scheme: dark) {
+  body {
+    background: rgb(34, 39, 46);
+    color: #fff;
+  }
+
+  figure code {
+    background: rgba(28, 33, 40, 0.5);
+  }
+
+  a {
+    color: rgb(141, 219, 140);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  figure code {
+    background: khaki;
+  }
+
+  a {
+    color: green;
+  }
+}
+
 main {
-  max-width: 960px;
+  max-width: max(90vw, 960px);
   margin: 0 auto;
-  background: #fff;
 }
 
 img, svg {
@@ -21,7 +45,6 @@ figure:last-child {
 figure code {
   display: block;
   line-height: 30px;
-  background: khaki;
   padding: 5px;
   border-radius: 3px;
 }
@@ -34,6 +57,6 @@ p {
   fill: green;
 }
 
-.red path {
+.red :is(path, circle) {
   stroke: red;
 }
