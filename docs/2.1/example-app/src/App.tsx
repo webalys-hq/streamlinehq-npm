@@ -5,7 +5,7 @@ import { ReactComponent as House3 } from '@streamlinehq/streamlinehq/img/streaml
 import zoomIn from '@streamlinehq/streamlinehq/img/streamline-bold/zoom-in-y7qvcY.svg'
 import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-share-hand-lock-jHWIji.svg'
 import interfaceFavoriteLike1 from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-favorite-like-1-gWaSyC.svg'
-import avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/avatar-2-G8DuSw.svg'
+import avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/avatar-2-Byf6xu.svg'
 import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/astronaut-robot-2-kxzfc9.svg'
 import AvatarStar2 from '@streamlinehq/streamlinehq/img/illustrations-duotone/avatar-star-2-fyZaeM.svg'
 
