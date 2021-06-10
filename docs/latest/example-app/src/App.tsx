@@ -2,7 +2,7 @@ import React from 'react'
 import TouchId2 from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/touchid/touch-id-2.svg'
 import AlertUser from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/alerts/alert-user.svg'
 import RadioactiveCircle from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/alerts/radioactive-circle.svg'
-import SatelliteSignal from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/interface-essential/satellite-signal.svg'
+import SatelliteSignal from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/share/satellite-signal.svg'
 import { ReactComponent as Server3 } from '@streamlinehq/streamlinehq/img/streamline-regular/internet-networks-servers/servers/server-3.svg'
 
 import { ReactComponent as ZoomIn } from '@streamlinehq/streamlinehq/img/streamline-bold/interface-essential/zoom/zoom-in.svg'
@@ -59,12 +59,21 @@ const App = () => (
       </h3>
       <figure>
         <code>{`import TouchId2 from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/touchid/touch-id-2.svg'`}</code>
-        <code>{`<img src={TouchId2} alt="Touch" />`}</code>
-        <img src={TouchId2} alt="Touch" />
-        <figcaption>Imported as an image, nothing is changed</figcaption>
+        <code>{`
+          <div style={{ width: '200px' }}>
+            <img src={TouchId2} alt="Touch" />
+          </div>
+        `}</code>
+        <div style={{ width: '200px' }}>
+          <img src={TouchId2} alt="Touch" />
+        </div>
+        <figcaption>
+          Imported as an image, nothing is changed (note that it takes all
+          available space, which is 200px because of the parent div)
+        </figcaption>
       </figure>
       <figure>
-        <code>{`import SatelliteSignal from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/interface-essential/satellite-signal.svg'`}</code>
+        <code>{`import SatelliteSignal from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/share/satellite-signal.svg'`}</code>
         <code>{`<img src={SatelliteSignal} alt="Satellite" width={150} />`}</code>
         <img src={SatelliteSignal} alt="Satellite" width={150} />
         <figcaption>Imported as an image, custom width is set</figcaption>
@@ -204,11 +213,11 @@ const App = () => (
       </figure>
       <figure>
         <code>{`import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/robot/robots-explorer/astronaut-robot-2.svg'`}</code>
-        <code>{`<AstronautRobot2 width={250} height={150} className="red"/>`}</code>
-        <AstronautRobot2 width={250} height={150} className="red" />
+        <code>{`<AstronautRobot2 width={250} height={150} stroke="red"/>`}</code>
+        <AstronautRobot2 width={250} height={150} stroke="red" />
         <figcaption>
-          Imported as a React component, width and height are set as props,
-          while stroke is set via CSS.
+          Imported as a React component, stroke, width and height are set as
+          props.
         </figcaption>
       </figure>
     </section>

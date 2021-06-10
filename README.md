@@ -34,6 +34,7 @@ Another option is to use an IDE which suggests you to autocomplete a path to an 
 
 ### How to change style, size, etc
 Streamline images are just `.svg` files and the way to alter them depends on your build system. As a rule of thumb you should either render them as images and change the CSS styles of the `<img>` tag, either inline render them as a component and change styles by passing `stroke`/`fill` attributes. Check `docs/latest/example-app` project for more examples.
+You can also change the color and size in Streamline app itself, download it as SVG and save it in your app as a static file.
 
 ### I cannot use `.env` file, which options do I have?
 You can set `STREAMLINE_FAMILIES` and `STREAMLINE_SECRET` variables in your shell so that the script can take them from `process.env`.
