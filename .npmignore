@@ -20,7 +20,8 @@ tmp
 .prettierrc.js
 rollup.config.js
 tsconfig.json
+.nvmrc
 
-src/
+src
 img/
 docs/

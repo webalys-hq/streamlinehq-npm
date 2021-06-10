@@ -1,6 +1,6 @@
 {
   "name": "@streamlinehq/streamlinehq",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "private": false,
   "description": "Universal NPM package for Streamline images.",
   "keywords": [
@@ -24,11 +24,11 @@
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
-    "build": "NODE_ENV=production rollup -c",
+    "build": "rm -rf build && NODE_ENV=production rollup -c",
     "dev": "NODE_ENV=development rollup -c -w",
-    "start": "node build/index.js",
-    "lint": "eslint 'src/index.ts' --quiet --fix",
-    "postinstall": "npm start"
+    "lint": "eslint 'src' --quiet --fix",
+    "postinstall": "node build/install.js",
+    "rebuild": "npm run build && npm i"
   },
   "browserslist": [
     "defaults"

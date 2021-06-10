@@ -1,9 +1,13 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs'
 import querystring from 'querystring'
+// For local dev
+// import http from 'http'
 import https from 'https'
-import {config} from "dotenv";
+import { config } from 'dotenv'
 
 const projectFolderPath = `${__dirname}/../../../..`
+// Needed when running npm start locally directly
+// const projectFolderPath = `${__dirname}/..`
 
 config({ path: `${projectFolderPath}/.env` })
 
@@ -22,11 +26,16 @@ async function getSVGs(
 ): Promise<StreamlineResponse> {
   return new Promise((resolve, reject) => {
     https
+      // For local dev
+      // http
       .get(
+        // For local dev
+        // `http://localhost:8080/v3/npm/assets/${secret}?${querystring.encode(
         `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
           {
             families,
-            hashes: true,
+            categories: true,
+            straightforward: true,
           },
         )}`,
         {
@@ -60,12 +69,12 @@ async function getSVGs(
 
 export async function installStreamlineAssets() {
   try {
-    let envValid = true
-    let streamlineConfiguration: {families: string[], secret: string} = {
+    let streamlineConfiguration: { families: string[]; secret: string } = {
       families: null,
-      secret: null
+      secret: null,
     }
 
+    let envValid = true
     // Try getting variables from env first
     try {
       streamlineConfiguration = {
@@ -74,7 +83,9 @@ export async function installStreamlineAssets() {
       }
     } catch (e) {
       if (e.name === 'SyntaxError') {
-        console.error('STREAMLINE_FAMILIES env var must be proper JSON')
+        console.error(
+          'Error while reading env vars: STREAMLINE_FAMILIES env var must be proper JSON',
+        )
         envValid = false
       } else {
         console.error(e)
@@ -83,7 +94,12 @@ export async function installStreamlineAssets() {
 
     // If env does not have all variables or it's invalid -- check the config file.
     // @deprecated
-    if (!envValid || !streamlineConfiguration.families || !streamlineConfiguration.secret) {
+    if (
+      !envValid ||
+      !streamlineConfiguration.families ||
+      !streamlineConfiguration.secret
+    ) {
+      console.debug('Reading streamlinehq.json config file')
       const url = `${projectFolderPath}/streamlinehq.json`
       const file = await readFileSync(url).toString()
       const fileConfiguration = JSON.parse(file)
@@ -126,19 +142,21 @@ export async function installStreamlineAssets() {
       await Promise.all(
         Object.keys(getSVGsResponse.data).map(async (familySlug) => {
           const family = getSVGsResponse.data[familySlug]
-          return Object.keys(family).map(async (iconSlugWithPartialHash) => {
-            const svg = family[iconSlugWithPartialHash]
+          return Object.keys(family).map(async (imageImportKey) => {
+            const svg = family[imageImportKey]
 
+            const [
+              categorySlug,
+              subcategorySlug,
+              iconSlug,
+            ] = imageImportKey.split('/')
             if (svg) {
-              const folderPath = `${__dirname}/../img/${familySlug}`
+              const folderPath = `${__dirname}/../img/${familySlug}/${categorySlug}/${subcategorySlug}`
               await mkdirSync(folderPath, { recursive: true })
-              return writeFileSync(
-                `${folderPath}/${iconSlugWithPartialHash}.svg`,
-                svg,
-              )
+              return writeFileSync(`${folderPath}/${iconSlug}.svg`, svg)
             } else {
               console.error(
-                `No SVG data is present for icon ${iconSlugWithPartialHash} of family ${familySlug}, please report this issue to the Streamline team.`,
+                `No SVG data is present for icon ${imageImportKey} of family ${familySlug}, please report this issue to the Streamline team.`,
               )
             }
           })
@@ -156,9 +174,13 @@ export async function installStreamlineAssets() {
   } catch (e) {
     console.log(e.name)
     if (e.code === 'ENOENT') {
-      console.error('STREAMLINE_FAMILIES and STREAMLINE_SECRET must be set in your env or .streamlinehq.json file must be present in parent folder')
+      console.error(
+        'STREAMLINE_FAMILIES and STREAMLINE_SECRET must be set in your env or .streamlinehq.json file must be present in parent folder',
+      )
     } else if (e.name === 'SyntaxError') {
-      console.error('STREAMLINE_FAMILIES and STREAMLINE_SECRET must be set in your env or .streamlinehq.json file must be proper JSON')
+      console.error(
+        'STREAMLINE_FAMILIES and STREAMLINE_SECRET must be set in your env or .streamlinehq.json file must be proper JSON',
+      )
     } else {
       console.error(e)
     }
