@@ -75,10 +75,18 @@ export async function installStreamlineAssets() {
     }
 
     let envValid = true
+    /*
+     Allow both
+       STREAMLINE_FAMILIES=["streamline-regular"]
+     and
+       STREAMLINE_FAMILIES="[\"streamline-regular\"]"
+     forms
+     */
+    const familiesFromEnv = process.env.STREAMLINE_FAMILIES.replace(/\\/g, '')
     // Try getting variables from env first
     try {
       streamlineConfiguration = {
-        families: JSON.parse(process.env.STREAMLINE_FAMILIES),
+        families: JSON.parse(familiesFromEnv),
         secret: process.env.STREAMLINE_SECRET,
       }
     } catch (e) {
