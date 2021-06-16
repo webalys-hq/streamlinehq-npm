@@ -1,5 +1,6 @@
 import React from 'react'
-import TouchId2 from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/touchid/touch-id-2.svg'
+// For issues T-2244 and T-2234
+import PieLineGraph from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/dashboard/pie-line-graph.svg'
 import AlertUser from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/alerts/alert-user.svg'
 import RadioactiveCircle from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/alerts/radioactive-circle.svg'
 import SatelliteSignal from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/share/satellite-signal.svg'
@@ -58,14 +59,14 @@ const App = () => (
         </a>
       </h3>
       <figure>
-        <code>{`import TouchId2 from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/touchid/touch-id-2.svg'`}</code>
+        <code>{`import PieLineGraph from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/dashboard/pie-line-graph.svg'`}</code>
         <code>{`
           <div style={{ width: '200px' }}>
-            <img src={TouchId2} alt="Touch" />
+            <img src={PieLineGraph} alt="Pie line graph" />
           </div>
         `}</code>
         <div style={{ width: '200px' }}>
-          <img src={TouchId2} alt="Touch" />
+          <img src={PieLineGraph} alt="Pie line graph" />
         </div>
         <figcaption>
           Imported as an image, nothing is changed (note that it takes all
