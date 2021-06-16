@@ -1,6 +1,6 @@
 {
   "name": "@streamlinehq/streamlinehq",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "private": false,
   "description": "Universal NPM package for Streamline images.",
   "keywords": [
