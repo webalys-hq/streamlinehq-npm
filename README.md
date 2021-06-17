@@ -6,10 +6,8 @@ It works with any framework. You just need NPM and a build system like Webpack w
 
 Check an example app in the `docs/latest` folder.
 
-## Deprecation of previous packages
-Warning, wrapper packages for React, Angular and Vue are deprecated and will be removed after August 1st 2021. Please use this new package instead, it provides a much better user experience.
-
-Also, on that date images in production for package version < 3.0 will change. Please update your package to 3.0 (if you haven't done so) before that date and ensure that images in your application are rendered correctly, otherwise you might get unexpected results. 
+## Deprecation notices
+Wrapper packages for React, Angular and Vue are deprecated and will be removed after August 1st 2021. Please use this new package instead, it provides a much better user experience.
 
 ## How to use
 1. Ensure that you have an active Streamline subscription.
