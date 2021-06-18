@@ -9,7 +9,12 @@ import { ReactComponent as Server3 } from '@streamlinehq/streamlinehq/img/stream
 import { ReactComponent as ZoomIn } from '@streamlinehq/streamlinehq/img/streamline-bold/interface-essential/zoom/zoom-in.svg'
 
 import TravelHotel5Star from '@streamlinehq/streamlinehq/img/streamline-mini-bold/maps-travel/hotel/travel-hotel-5-star.svg'
+// For issue T-2234
 import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-essential/share/interface-share-hand-lock.svg'
+
+// For issue T-2234
+import { ReactComponent as NoteWritingPen1 } from '@streamlinehq/streamlinehq/img/material-solid/interface-essential/content-edition/note-writing-pen-1.svg'
+import { ReactComponent as PencilPaper2 } from '@streamlinehq/streamlinehq/img/cyber-line/content-edition/content-edition/pencil-paper-2.svg'
 
 import Avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/users/users/avatar-2.svg'
 import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/robot/robots-explorer/astronaut-robot-2.svg'
@@ -196,6 +201,36 @@ const App = () => (
         <figcaption>
           Imported as an image, custom height and style for the img tag itself
           is set
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h3>
+        <a href="https://app.streamlinehq.com/icons/material-solid">
+          Material solid
+        </a>
+      </h3>
+      <figure>
+        <code>{`import { ReactComponent as NoteWritingPen1 } from '@streamlinehq/streamlinehq/img/material-solid/interface-essential/content-edition/note-writing-pen-1.svg'`}</code>
+        <code>{`<NoteWritingPen1 width={100} />`}</code>
+        <NoteWritingPen1 width={100} />
+        <figcaption>
+          Imported as a React component, width is set as a prop.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h3>
+        <a href="https://app.streamlinehq.com/icons/cyber-line">Cyber Line</a>
+      </h3>
+      <figure>
+        <code>{`import { ReactComponent as PencilPaper2 } from '@streamlinehq/streamlinehq/img/cyber-line/content-edition/content-edition/pencil-paper-2.svg'`}</code>
+        <code>{`<PencilPaper2 width={100} />`}</code>
+        <PencilPaper2 width={100} />
+        <figcaption>
+          Imported as a React component, width is set as a prop.
         </figcaption>
       </figure>
     </section>
