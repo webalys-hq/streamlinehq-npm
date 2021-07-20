@@ -7,7 +7,7 @@ It works with any framework. You just need NPM and a build system like Webpack w
 Check an example app in the `docs/latest` folder.
 
 ## Deprecation notices
-Wrapper packages for React, Angular and Vue are deprecated and will be removed after August 1st 2021. Please use this new package instead, it provides a much better user experience.
+Wrapper packages for React, Angular and Vue are deprecated and will be removed after August 1st 2021. Please use this new package instead, which simply serves svg files for your app. Users are expected to use their own svg loader for whatever build system they use in their app; read more below.
 
 ## How to use
 1. Ensure that you have an active Streamline subscription.
