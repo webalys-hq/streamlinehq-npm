@@ -5,9 +5,7 @@ import querystring from 'querystring'
 import https from 'https'
 import { config } from 'dotenv'
 
-const projectFolderPath = `${__dirname}/../../../..`
-// Needed when running npm start locally directly
-// const projectFolderPath = `${__dirname}/..`
+const projectFolderPath = process.cwd()
 
 config({ path: `${projectFolderPath}/.env` })
 
