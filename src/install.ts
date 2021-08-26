@@ -5,7 +5,7 @@ import querystring from 'querystring'
 import https from 'https'
 import { config } from 'dotenv'
 
-// This env var must be set in terminal session in order to be used
+// This optional env var must be set in terminal session in order to be used
 const relativeProjectFolderPath = process.env
   .STREAMLINE_RELATIVE_PROJECT_FOLDER_PATH
   ? process.env.STREAMLINE_RELATIVE_PROJECT_FOLDER_PATH
@@ -34,7 +34,7 @@ async function getSVGs(
       .get(
         // For local dev
         // `http://localhost:8080/v3/npm/assets/${secret}?${querystring.encode(
-        `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
+        `https://api.streamlinehq.com/v3/npm/assets/${secret}?${querystring.encode(
           {
             families,
             categories: true,
