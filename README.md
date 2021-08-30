@@ -18,7 +18,7 @@ Wrapper packages for React, Angular and Vue are deprecated and will be removed a
 4. Configure your project so that it can import any `svg` files as images and render them. It depends on your tech stack. For instance, in [create-react-app](https://create-react-app.dev/docs/adding-images-fonts-and-files/#adding-svgs) this feature is enabled by default.
 After this you will be able to import Streamline images as usual in your project, eg:
 ```jsx
-import SatelliteSignal from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/interface-essential/satellite-signal.svg'
+import SatelliteSignal from '@streamlinehq/streamlinehq/img/streamline-regular/interface-essential/share/satellite-signal.svg'
 ```
 Check `docs/latest/example-app` project for more examples.
 
