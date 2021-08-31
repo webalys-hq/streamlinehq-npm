@@ -44,33 +44,42 @@ async function getSVGs(
         {
           headers: { 'Content-Type': 'application/json' },
         },
-        (resp) => {
+        (response) => {
           let data = ''
 
-          resp.on('data', (chunk) => {
+          response.on('data', (chunk) => {
             data += chunk
           })
 
-          resp.on('end', () => {
+          response.on('end', () => {
+            if (response.statusCode === 504) {
+              throw new Error(
+                'Streamline is unavailable, please try again later',
+              )
+            } else if (response.statusCode >= 500) {
+              throw new Error(
+                'Api error from Streamline, please try again later',
+              )
+            }
             try {
               resolve({
                 ...JSON.parse(data),
-                statusCode: resp.statusCode,
+                statusCode: response.statusCode,
               })
             } catch (e) {
-              console.error('Error parsing JSON from request')
+              throw new Error('Error parsing JSON from request')
             }
           })
         },
       )
       .on('error', (err) => {
         console.error('API error: ' + err.message)
-        reject(err)
+        throw err
       })
   })
 }
 
-export async function installStreamlineAssets() {
+export async function installStreamlineAssets(): Promise<void> {
   try {
     let streamlineConfiguration: { families: string[]; secret: string } = {
       families: null,
@@ -104,7 +113,7 @@ export async function installStreamlineAssets() {
         )
         envValid = false
       } else {
-        console.error(e)
+        throw e
       }
     }
 

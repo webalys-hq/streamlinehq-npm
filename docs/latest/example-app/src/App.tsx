@@ -13,16 +13,16 @@ import TravelHotel5Star from '@streamlinehq/streamlinehq/img/streamline-mini-bol
 import { ReactComponent as InterfaceShareHandLock } from '@streamlinehq/streamlinehq/img/streamline-mini-bold/interface-essential/share/interface-share-hand-lock.svg'
 
 // For issue T-2234
-import { ReactComponent as NoteWritingPen1 } from '@streamlinehq/streamlinehq/img/material-solid/interface-essential/content-edition/note-writing-pen-1.svg'
-import { ReactComponent as PencilPaper2 } from '@streamlinehq/streamlinehq/img/cyber-line/content-edition/content-edition/pencil-paper-2.svg'
+// import { ReactComponent as NoteWritingPen1 } from '@streamlinehq/streamlinehq/img/material-solid/interface-essential/content-edition/note-writing-pen-1.svg'
+// import { ReactComponent as PencilPaper2 } from '@streamlinehq/streamlinehq/img/cyber-line/content-edition/content-edition/pencil-paper-2.svg'
 
-import Avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/users/users/avatar-2.svg'
-import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/robot/robots-explorer/astronaut-robot-2.svg'
+// import Avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/users/users/avatar-2.svg'
+// import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/robot/robots-explorer/astronaut-robot-2.svg'
 
-import AvatarNetwork from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/users/avatar-network.svg'
-import Avatar4 from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/users/avatar-4.svg'
-import { ReactComponent as ContactBook1 } from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/user-profile-data/contact-book-1.svg'
-import { ReactComponent as FingerprintHand3 } from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/fingerprint-identification/fingerprint-hand-3.svg'
+// import AvatarNetwork from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/users/avatar-network.svg'
+// import Avatar4 from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/users/avatar-4.svg'
+// import { ReactComponent as ContactBook1 } from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/user-profile-data/contact-book-1.svg'
+// import { ReactComponent as FingerprintHand3 } from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/fingerprint-identification/fingerprint-hand-3.svg'
 
 import './App.css'
 
@@ -205,113 +205,113 @@ const App = () => (
       </figure>
     </section>
 
-    <section>
-      <h3>
-        <a href="https://app.streamlinehq.com/icons/material-solid">
-          Material solid
-        </a>
-      </h3>
-      <figure>
-        <code>{`import { ReactComponent as NoteWritingPen1 } from '@streamlinehq/streamlinehq/img/material-solid/interface-essential/content-edition/note-writing-pen-1.svg'`}</code>
-        <code>{`<NoteWritingPen1 width={100} />`}</code>
-        <NoteWritingPen1 width={100} />
-        <figcaption>
-          Imported as a React component, width is set as a prop.
-        </figcaption>
-      </figure>
-    </section>
+    {/*<section>*/}
+    {/*  <h3>*/}
+    {/*    <a href="https://app.streamlinehq.com/icons/material-solid">*/}
+    {/*      Material solid*/}
+    {/*    </a>*/}
+    {/*  </h3>*/}
+    {/*  <figure>*/}
+    {/*    <code>{`import { ReactComponent as NoteWritingPen1 } from '@streamlinehq/streamlinehq/img/material-solid/interface-essential/content-edition/note-writing-pen-1.svg'`}</code>*/}
+    {/*    <code>{`<NoteWritingPen1 width={100} />`}</code>*/}
+    {/*    <NoteWritingPen1 width={100} />*/}
+    {/*    <figcaption>*/}
+    {/*      Imported as a React component, width is set as a prop.*/}
+    {/*    </figcaption>*/}
+    {/*  </figure>*/}
+    {/*</section>*/}
 
-    <section>
-      <h3>
-        <a href="https://app.streamlinehq.com/icons/cyber-line">Cyber Line</a>
-      </h3>
-      <figure>
-        <code>{`import { ReactComponent as PencilPaper2 } from '@streamlinehq/streamlinehq/img/cyber-line/content-edition/content-edition/pencil-paper-2.svg'`}</code>
-        <code>{`<PencilPaper2 width={100} />`}</code>
-        <PencilPaper2 width={100} />
-        <figcaption>
-          Imported as a React component, width is set as a prop.
-        </figcaption>
-      </figure>
-    </section>
+    {/*<section>*/}
+    {/*  <h3>*/}
+    {/*    <a href="https://app.streamlinehq.com/icons/cyber-line">Cyber Line</a>*/}
+    {/*  </h3>*/}
+    {/*  <figure>*/}
+    {/*    <code>{`import { ReactComponent as PencilPaper2 } from '@streamlinehq/streamlinehq/img/cyber-line/content-edition/content-edition/pencil-paper-2.svg'`}</code>*/}
+    {/*    <code>{`<PencilPaper2 width={100} />`}</code>*/}
+    {/*    <PencilPaper2 width={100} />*/}
+    {/*    <figcaption>*/}
+    {/*      Imported as a React component, width is set as a prop.*/}
+    {/*    </figcaption>*/}
+    {/*  </figure>*/}
+    {/*</section>*/}
 
-    <section>
-      <h3>
-        <a href="https://app.streamlinehq.com/illustrations/illustrations-line">
-          Streamline UX – Line
-        </a>
-      </h3>
-      <figure>
-        <code>{`import Avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/users/users/avatar-2.svg'`}</code>
-        <code>{`<img src={Avatar2} alt="Avatar" width={150} />`}</code>
-        <img src={Avatar2} alt="Avatar" width={150} />
-        <figcaption>Imported as an image, custom width is set</figcaption>
-      </figure>
-      <figure>
-        <code>{`import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/robot/robots-explorer/astronaut-robot-2.svg'`}</code>
-        <code>{`<AstronautRobot2 width={250} height={150} stroke="red"/>`}</code>
-        <AstronautRobot2 width={250} height={150} stroke="red" />
-        <figcaption>
-          Imported as a React component, stroke, width and height are set as
-          props.
-        </figcaption>
-      </figure>
-    </section>
+    {/*<section>*/}
+    {/*  <h3>*/}
+    {/*    <a href="https://app.streamlinehq.com/illustrations/illustrations-line">*/}
+    {/*      Streamline UX – Line*/}
+    {/*    </a>*/}
+    {/*  </h3>*/}
+    {/*  <figure>*/}
+    {/*    <code>{`import Avatar2 from '@streamlinehq/streamlinehq/img/illustrations-line/users/users/avatar-2.svg'`}</code>*/}
+    {/*    <code>{`<img src={Avatar2} alt="Avatar" width={150} />`}</code>*/}
+    {/*    <img src={Avatar2} alt="Avatar" width={150} />*/}
+    {/*    <figcaption>Imported as an image, custom width is set</figcaption>*/}
+    {/*  </figure>*/}
+    {/*  <figure>*/}
+    {/*    <code>{`import { ReactComponent as AstronautRobot2 } from '@streamlinehq/streamlinehq/img/illustrations-line/robot/robots-explorer/astronaut-robot-2.svg'`}</code>*/}
+    {/*    <code>{`<AstronautRobot2 width={250} height={150} stroke="red"/>`}</code>*/}
+    {/*    <AstronautRobot2 width={250} height={150} stroke="red" />*/}
+    {/*    <figcaption>*/}
+    {/*      Imported as a React component, stroke, width and height are set as*/}
+    {/*      props.*/}
+    {/*    </figcaption>*/}
+    {/*  </figure>*/}
+    {/*</section>*/}
 
-    <h2>Multi-colored images</h2>
+    {/*<h2>Multi-colored images</h2>*/}
 
-    <section>
-      <h3>
-        <a href="https://app.streamlinehq.com/illustrations/illustrations-multicolor">
-          Streamline UX – Multicolor
-        </a>
-      </h3>
-      <figure>
-        <code>{`import AvatarNetwork from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/users/avatar-network.svg'`}</code>
-        <code>{`<img src={AvatarNetwork} alt="AvatarNetwork" width={150} />`}</code>
-        <img src={AvatarNetwork} alt="AvatarNetwork" width={150} />
-        <figcaption>Imported as an image, custom width is set</figcaption>
-      </figure>
-      <figure>
-        <code>{`import Avatar4 from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/users/avatar-4.svg'`}</code>
-        <code>{`
-          <img
-            src={Avatar4}
-            alt="Avatar4"
-            width={150}
-            style={{ background: 'blue', padding: 10, borderRadius: 150 }}
-          />
-        `}</code>
-        <img
-          src={Avatar4}
-          alt="Avatar4"
-          width={150}
-          style={{ background: 'blue', padding: 10, borderRadius: 150 }}
-        />
-        <figcaption>
-          Imported as an image, custom width and style for the img tag itself is
-          set
-        </figcaption>
-      </figure>
-      <figure>
-        <code>{`import { ReactComponent as ContactBook1 } from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/user-profile-data/contact-book-1.svg'`}</code>
-        <code>{`<ContactBook1 width={100} className="red" />`}</code>
-        <ContactBook1 width={100} className="red" />
-        <figcaption>
-          Imported as a React component, width is set as a prop, stroke is set
-          via CSS to red while fill is original.
-        </figcaption>
-      </figure>
-      <figure>
-        <code>{`import { ReactComponent as FingerprintHand3 } from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/fingerprint-identification/fingerprint-hand-3.svg'`}</code>
-        <code>{`<FingerprintHand3 width={100} className="red green" />`}</code>
-        <FingerprintHand3 width={100} className="red green" />
-        <figcaption>
-          Imported as a React component, width is set as a prop, fill is set to
-          green via CSS while stroke is set via CSS to red.
-        </figcaption>
-      </figure>
-    </section>
+    {/*<section>*/}
+    {/*  <h3>*/}
+    {/*    <a href="https://app.streamlinehq.com/illustrations/illustrations-multicolor">*/}
+    {/*      Streamline UX – Multicolor*/}
+    {/*    </a>*/}
+    {/*  </h3>*/}
+    {/*  <figure>*/}
+    {/*    <code>{`import AvatarNetwork from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/users/avatar-network.svg'`}</code>*/}
+    {/*    <code>{`<img src={AvatarNetwork} alt="AvatarNetwork" width={150} />`}</code>*/}
+    {/*    <img src={AvatarNetwork} alt="AvatarNetwork" width={150} />*/}
+    {/*    <figcaption>Imported as an image, custom width is set</figcaption>*/}
+    {/*  </figure>*/}
+    {/*  <figure>*/}
+    {/*    <code>{`import Avatar4 from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/users/avatar-4.svg'`}</code>*/}
+    {/*    <code>{`*/}
+    {/*      <img*/}
+    {/*        src={Avatar4}*/}
+    {/*        alt="Avatar4"*/}
+    {/*        width={150}*/}
+    {/*        style={{ background: 'blue', padding: 10, borderRadius: 150 }}*/}
+    {/*      />*/}
+    {/*    `}</code>*/}
+    {/*    <img*/}
+    {/*      src={Avatar4}*/}
+    {/*      alt="Avatar4"*/}
+    {/*      width={150}*/}
+    {/*      style={{ background: 'blue', padding: 10, borderRadius: 150 }}*/}
+    {/*    />*/}
+    {/*    <figcaption>*/}
+    {/*      Imported as an image, custom width and style for the img tag itself is*/}
+    {/*      set*/}
+    {/*    </figcaption>*/}
+    {/*  </figure>*/}
+    {/*  <figure>*/}
+    {/*    <code>{`import { ReactComponent as ContactBook1 } from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/user-profile-data/contact-book-1.svg'`}</code>*/}
+    {/*    <code>{`<ContactBook1 width={100} className="red" />`}</code>*/}
+    {/*    <ContactBook1 width={100} className="red" />*/}
+    {/*    <figcaption>*/}
+    {/*      Imported as a React component, width is set as a prop, stroke is set*/}
+    {/*      via CSS to red while fill is original.*/}
+    {/*    </figcaption>*/}
+    {/*  </figure>*/}
+    {/*  <figure>*/}
+    {/*    <code>{`import { ReactComponent as FingerprintHand3 } from '@streamlinehq/streamlinehq/img/illustrations-multicolor/users/fingerprint-identification/fingerprint-hand-3.svg'`}</code>*/}
+    {/*    <code>{`<FingerprintHand3 width={100} className="red green" />`}</code>*/}
+    {/*    <FingerprintHand3 width={100} className="red green" />*/}
+    {/*    <figcaption>*/}
+    {/*      Imported as a React component, width is set as a prop, fill is set to*/}
+    {/*      green via CSS while stroke is set via CSS to red.*/}
+    {/*    </figcaption>*/}
+    {/*  </figure>*/}
+    {/*</section>*/}
   </main>
 )
 
