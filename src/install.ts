@@ -5,9 +5,12 @@ import querystring from 'querystring'
 import https from 'https'
 import { config } from 'dotenv'
 
-const projectFolderPath = `${__dirname}/../../../..`
-// Needed when running npm start locally directly
-// const projectFolderPath = `${__dirname}/..`
+// This optional env var must be set in terminal session in order to be used
+const relativeProjectFolderPath = process.env
+  .STREAMLINE_RELATIVE_PROJECT_FOLDER_PATH
+  ? process.env.STREAMLINE_RELATIVE_PROJECT_FOLDER_PATH
+  : '/../../../..'
+const projectFolderPath = `${__dirname}${relativeProjectFolderPath}`
 
 config({ path: `${projectFolderPath}/.env` })
 
@@ -31,7 +34,7 @@ async function getSVGs(
       .get(
         // For local dev
         // `http://localhost:8080/v3/npm/assets/${secret}?${querystring.encode(
-        `https://api.streamlineicons.com/v3/npm/assets/${secret}?${querystring.encode(
+        `https://api.streamlinehq.com/v3/npm/assets/${secret}?${querystring.encode(
           {
             families,
             categories: true,
@@ -41,33 +44,42 @@ async function getSVGs(
         {
           headers: { 'Content-Type': 'application/json' },
         },
-        (resp) => {
+        (response) => {
           let data = ''
 
-          resp.on('data', (chunk) => {
+          response.on('data', (chunk) => {
             data += chunk
           })
 
-          resp.on('end', () => {
+          response.on('end', () => {
+            if (response.statusCode === 504) {
+              throw new Error(
+                'Streamline is unavailable, please try again later',
+              )
+            } else if (response.statusCode >= 500) {
+              throw new Error(
+                'Api error from Streamline, please try again later',
+              )
+            }
             try {
               resolve({
                 ...JSON.parse(data),
-                statusCode: resp.statusCode,
+                statusCode: response.statusCode,
               })
             } catch (e) {
-              console.error('Error parsing JSON from request')
+              throw new Error('Error parsing JSON from request')
             }
           })
         },
       )
       .on('error', (err) => {
         console.error('API error: ' + err.message)
-        reject(err)
+        throw err
       })
   })
 }
 
-export async function installStreamlineAssets() {
+export async function installStreamlineAssets(): Promise<void> {
   try {
     let streamlineConfiguration: { families: string[]; secret: string } = {
       families: null,
@@ -101,7 +113,7 @@ export async function installStreamlineAssets() {
         )
         envValid = false
       } else {
-        console.error(e)
+        throw e
       }
     }
 

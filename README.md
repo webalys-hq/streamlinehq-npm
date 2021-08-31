@@ -34,12 +34,12 @@ Another option is to use an IDE which suggests you to autocomplete a path to an 
 Streamline images are just `.svg` files and the way to alter them depends on your build system. As a rule of thumb you should either render them as images and change the CSS styles of the `<img>` tag, either inline render them as a component and change styles by passing `stroke`/`fill` attributes. Check `docs/latest/example-app` project for more examples.
 You can also change the color and size in Streamline app itself, download it as SVG and save it in your app as a static file.
 
+## Troubleshooting
+### I need to set custom path to my `.env` file, what do I do?
+This is a rare case. Set `STREAMLINE_RELATIVE_PROJECT_FOLDER_PATH` in your terminal session which will run the installation script to a path which will be appended to the npm package's path to locate the parent's project folder path from an npm package. This might sound confusing, check `install.ts` file, line 13 to understand how it's used.
+
 ### I cannot use `.env` file, which options do I have?
 You can set `STREAMLINE_FAMILIES` and `STREAMLINE_SECRET` variables in your shell so that the script can take them from `process.env`.
-
-Alternatively you can use `streamlinehq.json` secret file. Please check [1.0.4 README](https://github.com/webalys-hq/streamlinehq-npm/tree/1.0.4) for how to do that.
-
-## Troubleshooting
 
 In 80% of the cases you need to ensure that you have set up your env vars properly in your project and reinstall this package by removing it completely and then installing it again, eg with `rm -rf node_modules && npm i`.
 
