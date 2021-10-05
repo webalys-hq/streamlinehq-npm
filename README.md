@@ -1,3 +1,6 @@
+# Deprecation notice
+Unfortunately the streamline npm package architecture is brittle and over-engineered. Please download the images directly from our website and insert them into your project as files which will always be reliable. Use this package at your own risk.
+
 # NPM package for Streamline icons and illustrations
 This is a small library which downloads Streamline assets you have access to into your local folder so that they can be used in your Javascript project.
 This is the only package you need to use Streamline assets, so please uninstall any old Streamline wrapper or private packages if you had them.
@@ -5,9 +8,6 @@ This is the only package you need to use Streamline assets, so please uninstall 
 It works with any framework. You just need NPM and a build system like Webpack which will handle `.svg` files.
 
 Check an example app in the `docs/latest` folder.
-
-## Deprecation notices
-Wrapper packages for React, Angular and Vue are deprecated and will be removed after August 1st 2021. Please use this new package instead, which simply serves svg files for your app. Users are expected to use their own svg loader for whatever build system they use in their app; read more below.
 
 ## How to use
 1. Ensure that you have an active Streamline subscription.
