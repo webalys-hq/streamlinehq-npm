@@ -1,5 +1,9 @@
 # Deprecation notice
-Unfortunately the streamline npm package architecture is brittle and over-engineered. Please download the images directly from our website and insert them into your project as files which will always be reliable. Use this package at your own risk.
+Streamline NPM package is deprecated and will be deleted completely on 1st November 2022, read the full story [here](https://medium.com/streamline-icons/how-streamline-narrows-down-its-focus-eac6fdb5c6f2).
+
+Unfortunately the Streamline NPM package architecture is brittle and over-engineered. Please download the images directly from our website and insert them into your project as files which will always be reliable. Streamline team is focused on ensuring that our web application provides the best user experience for developers' use cases.
+
+---
 
 # NPM package for Streamline icons and illustrations
 This is a small library which downloads Streamline assets you have access to into your local folder so that they can be used in your Javascript project.
